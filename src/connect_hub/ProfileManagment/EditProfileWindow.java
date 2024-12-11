@@ -10,6 +10,8 @@ import connect_hub.UserManagement.UserDetails;
 import connect_hub.UserManagement.PutUsers;
 import connect_hub.UserManagement.ReadUsers;
 import connect_hub.FriendManagment.FriendBlockedListWidow;
+import connect_hub.UserManagement.HomeScreen;
+import connect_hub.UserManagement.LogOut;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -460,7 +462,13 @@ public class EditProfileWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        try {
+            LogOut logOut = new LogOut();
+            logOut.logOut(email);
+            HomeScreen.getInstance().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
