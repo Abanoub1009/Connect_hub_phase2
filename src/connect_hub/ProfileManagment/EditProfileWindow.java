@@ -81,7 +81,6 @@ public class EditProfileWindow extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
 
@@ -153,6 +152,11 @@ public class EditProfileWindow extends javax.swing.JFrame {
         jLabel7.setText("Bio");
 
         jButton8.setText("Log out");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Get list of suggested friends");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -160,8 +164,6 @@ public class EditProfileWindow extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-
-        jButton9.setText("jButton9");
 
         jButton10.setText("Get list of requested friends");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +198,7 @@ public class EditProfileWindow extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(204, 204, 204))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,12 +207,8 @@ public class EditProfileWindow extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(188, 188, 188))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,11 +216,10 @@ public class EditProfileWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
-                                .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
-                        .addGap(118, 118, 118)
+                        .addGap(111, 111, 111)
                         .addComponent(jButton8)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -259,17 +256,18 @@ public class EditProfileWindow extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel7)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9)
-                            .addComponent(jButton4))))
+                        .addComponent(jButton4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jButton10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton7)
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton11))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton11))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8)))
                 .addGap(39, 39, 39))
         );
 
@@ -277,10 +275,12 @@ public class EditProfileWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ChangePasswordWindow changePassword = new ChangePasswordWindow(email);
+        ChangePasswordWindow changePassword = new ChangePasswordWindow();
         changePassword.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+  public void loadUser(){
+      
+  }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Select Cover Photo");
@@ -390,7 +390,7 @@ public class EditProfileWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error reading users from file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+        openWindow(email);
         UserDetails user = new UserDetails();
         user = user.getSpecificUser(userList, email);
         System.out.print(user.getBio());
@@ -422,42 +422,46 @@ public class EditProfileWindow extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         try {
-            ListOfFriendsRequestedWindow request = new ListOfFriendsRequestedWindow(email);
+            ListOfFriendsRequestedWindow request=new ListOfFriendsRequestedWindow (email);
             request.setVisible(true);
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+      
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        FriendSuggestionWindow suggest;
+      FriendSuggestionWindow suggest;
         try {
-            suggest = new FriendSuggestionWindow(email);
+            suggest=new FriendSuggestionWindow(email);
             suggest.setVisible(true);
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
+       
+     
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        FriendBlockedListWidow blocked;
+      FriendBlockedListWidow  blocked;
         try {
-            blocked = new FriendBlockedListWidow(email);
-            blocked.setVisible(true);
+            blocked = new  FriendBlockedListWidow (email);
+             blocked.setVisible(true);
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(EditProfileWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+      
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -506,7 +510,6 @@ public class EditProfileWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

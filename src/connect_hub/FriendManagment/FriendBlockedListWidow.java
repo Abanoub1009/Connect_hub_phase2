@@ -5,6 +5,7 @@
 package connect_hub.FriendManagment;
 
 import connect_hub.ProfileManagment.getListOfFriendsWindow;
+import connect_hub.UserManagement.Friends;
 import connect_hub.UserManagement.PutUsers;
 import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
@@ -21,34 +22,31 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class FriendBlockedListWidow extends javax.swing.JFrame {
-
-    String email;
-    ArrayList<UserDetails> userList;
-
+String email;
+ArrayList<UserDetails> userList ;
     /**
      * Creates new form FriendBlockedListWidow
      */
     public FriendBlockedListWidow(String email) throws NoSuchAlgorithmException, IOException {
         initComponents();
-        this.email = email;
+        this.email=email;
         loadAllFriends();
     }
-
-    public void loadAllFriends() throws NoSuchAlgorithmException, IOException {
-        userList = new ArrayList<>();
-        userList = ReadUsers.readUsersFromFile("users.json");
-        UserDetails user = new UserDetails();
-        user = user.getSpecificUser(userList, email);
-        DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (connect_hub.UserManagement.Friends friend : user.getBlocked()) {
-            String friendInfo = "User Name: " + friend.getFriendd();
-            listModel.addElement(friendInfo);
-        }
-        jList1.setModel(listModel);
+public void loadAllFriends() throws NoSuchAlgorithmException, IOException{
+       userList = new ArrayList<>();
+         userList = ReadUsers.readUsersFromFile("users.json");
+         UserDetails user=new UserDetails();
+         user=user.getSpecificUser(userList, email);
+         DefaultListModel<String>listModel=new DefaultListModel<>();
+         for(connect_hub.UserManagement.Friends friend:user.getBlocked()){
+             String friendInfo = "User Name: "+friend.getFriendd() ;
+        listModel.addElement(friendInfo);
+         }
+       jList1.setModel(listModel);
     }
-
     public FriendBlockedListWidow() {
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,23 +131,23 @@ public class FriendBlockedListWidow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int index = jList1.getSelectedIndex();
-        userList = new ArrayList<>();
-        try {
-            userList = ReadUsers.readUsersFromFile("users.json");
-        } catch (IOException ex) {
-            Logger.getLogger(getListOfFriendsWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        UserDetails user = new UserDetails();
-        user = user.getSpecificUser(userList, email);
-        user.getBlocked().remove(index);
+       int index=jList1.getSelectedIndex();
+    userList = new ArrayList<>();
+    try {
+        userList = ReadUsers.readUsersFromFile("users.json");
+    } catch (IOException ex) {
+        Logger.getLogger(getListOfFriendsWindow.class.getName()).log(Level.SEVERE, null, ex);
+    }
+     UserDetails user=new UserDetails();
+        user=user.getSpecificUser(userList, email);
+       user.getBlocked().remove(index);
         JOptionPane.showMessageDialog(this, "Unblocked successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        try {
-            PutUsers.save(userList);
-        } catch (IOException ex) {
-            Logger.getLogger(FriendBlockedListWidow.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+    try {
+        PutUsers.save(userList);
+    } catch (IOException ex) {
+        Logger.getLogger(FriendBlockedListWidow.class.getName()).log(Level.SEVERE, null, ex);
+    }
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

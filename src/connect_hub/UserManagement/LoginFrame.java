@@ -35,7 +35,7 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Andalus", 1, 20)); // NOI18N
@@ -45,6 +45,10 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Andalus", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 255));
         jLabel2.setText("Password:");
+
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
 
         jInternalFrame1.setVisible(true);
 
@@ -70,6 +74,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Log In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -1,9 +1,16 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package connect_hub.NewsFeed;
 
+import connect_hub.ContentCreation.Content;
+import connect_hub.ContentCreation.Story;
 import connect_hub.ContentCreation.addPost;
 import connect_hub.ContentCreation.addStory;
 import connect_hub.ProfileManagment.EditProfileWindow;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,10 +18,12 @@ import connect_hub.ProfileManagment.EditProfileWindow;
  */
 public class gui extends javax.swing.JFrame {
 
+    private NewsFeedManager newsFeedManager;
     private String email;
 
     public gui(String email) {
         initComponents();
+        newsFeedManager = new NewsFeedManager("posts.json");
         this.email = email;
     }
 

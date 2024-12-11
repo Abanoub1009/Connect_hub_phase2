@@ -7,8 +7,11 @@ package connect_hub.NewsFeed;
 import connect_hub.ContentCreation.Content;
 import connect_hub.ContentCreation.ContentRepository;
 import connect_hub.ContentCreation.Post;
+import connect_hub.UserManagement.Friends;
+import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
 import java.io.IOException;
+import java.lang.System.Logger.Level;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -77,7 +80,7 @@ public void loadAllPosts() throws NoSuchAlgorithmException, IOException {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(55, 204, 255));

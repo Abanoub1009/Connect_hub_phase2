@@ -1,11 +1,16 @@
 package connect_hub.ProfileManagment;
 
+
+import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
 import connect_hub.UserManagement.PutUsers;
 import connect_hub.UserManagement.ReadUsers;
 
+import java.awt.List;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -14,10 +19,11 @@ import javax.swing.JOptionPane;
  *
  * @author HP
  */
+
 public class ChangeBioWindow extends javax.swing.JFrame {
 
-    private String bio;
-    private String email;
+    public String bio;
+    public String email;
 
     /**
      * Creates new form ChangeBioWindow
@@ -30,11 +36,6 @@ public class ChangeBioWindow extends javax.swing.JFrame {
     }
 
     public ChangeBioWindow() {
-    }
-
-    public String getUpdatedBio() {
-        String updatedBio = jTextField1.getText();
-        return (updatedBio != null && !updatedBio.trim().isEmpty()) ? updatedBio : null;
     }
 
     /**
@@ -127,22 +128,24 @@ public class ChangeBioWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String Bio = jTextField1.getText();
-        bio = jTextField1.getText();
-        ArrayList<UserDetails> list = new ArrayList<>();
+        String Bio=   jTextField1.getText();
+bio= jTextField1.getText();
+//email=   jTextField2.getText();
+ ArrayList<UserDetails> list=new ArrayList<>();
         try {
-
-            list = ReadUsers.readUsersFromFile("users.json");
+           
+                    list=ReadUsers.readUsersFromFile("users.json");
         } catch (IOException ex) {
             Logger.getLogger(ChangeBioWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        UserDetails user = new UserDetails();
-        UpdateBio changeBio = new UpdateBio(list);
-        user = changeBio.getSpecific(email);
-        changeBio.changeBio(Bio, user.getUserId());
-        JOptionPane.showMessageDialog(this, "Bio updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+        UserDetails user=new UserDetails();
+        UpdateBio changeBio=new UpdateBio(list);
+        user=changeBio.getSpecific(email);
+        changeBio.changeBio(Bio,user.getUserId());
+       // updateBio(user.getBio());
+      //  System.out.println(user.getBio());
+         JOptionPane.showMessageDialog(this, "Bio updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
         try {
-
             PutUsers.save(list);
         } catch (IOException ex) {
             Logger.getLogger(ChangeBioWindow.class.getName()).log(Level.SEVERE, null, ex);
@@ -158,36 +161,36 @@ public class ChangeBioWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+     */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ChangeBioWindow().setVisible(true);
-            }
-        });
+    } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(ChangeBioWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new ChangeBioWindow().setVisible(true);
+        }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

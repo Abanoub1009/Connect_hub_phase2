@@ -1,7 +1,6 @@
 package connect_hub;
 
 import connect_hub.ContentCreation.*;
-import connect_hub.Groups.Group;
 import connect_hub.UserManagement.*;
 import java.io.*;
 import java.lang.reflect.Field;
@@ -126,31 +125,15 @@ public class FileManager<T> {
                     e.printStackTrace();
                 }
             }
-        } else if (object instanceof Group) {
-            jsonObject.put("id", newId);
-            Group group = (Group) object;
-
-            // Use reflection to get all fields and their values dynamically for UserDetails
-            Field[] fields = UserDetails.class.getDeclaredFields();
-            for (Field field : fields) {
-                field.setAccessible(true);
-                try {
-                    Object value = field.get(group);
-                    jsonObject.put(field.getName(), value);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            // Add the new object to the JSON array
-            jsonArray.put(jsonObject);
-
-            // Write the updated array back to the file
-            try (FileWriter file = new FileWriter(filePath)) {
-                file.write(jsonArray.toString(4));  // Pretty print with indentation
-            }
         }
 
+        // Add the new object to the JSON array
+        jsonArray.put(jsonObject);
+
+        // Write the updated array back to the file
+        try (FileWriter file = new FileWriter(filePath)) {
+            file.write(jsonArray.toString(4));  // Pretty print with indentation
+        }
     }
 
     public void deleteJsonFile() {

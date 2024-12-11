@@ -1,228 +1,128 @@
 [
-   {
-      "request": [{
-         "FriendUserName": "ann",
-         "status": "Offline"
-      }],
-      "coverPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "10-9-2004",
-      "userName": "abanoub",
-      "posts": [],
-      "friends": [],
-      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-      "profilePhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-      "blocked": [],
-      "id": "U9",
-      "email": "123@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "10-9-2004",
-      "userName": "bibo",
-      "posts": [{
-         "Content": "hello from my post 1",
-         "Image": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-         "Timestamp": "2024-12-06T18:47:56.827043700"
-      }],
-      "friends": [],
-      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U1",
-      "email": "abanoub20@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
-      "bio": "new",
-      "dateOfBirth": "11-10-2023",
-      "userName": "shahd",
-      "posts": [],
-      "friends": [],
-      "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
-      "profilePhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\WIN_20241021_13_52_02_Pro.jpg",
-      "blocked": [],
-      "id": "U2",
-      "email": "shahdd@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "1-1-2002",
-      "userName": "sheroukwaheed",
-      "posts": [],
-      "friends": [],
-      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U3",
-      "email": "sher@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "1-1-2001",
-      "userName": "sheroukwah",
-      "posts": [
-         {
-            "Content": "lk",
-            "Image": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
-            "Timestamp": "2024-12-06T21:40:50.592403800"
-         },
-         {
-            "Content": "kjdjdj",
-            "Image": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (34).png",
-            "Timestamp": "2024-12-06T22:29:42.396084"
-         }
-      ],
-      "friends": [],
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [{
-         "FriendUserName": "sama mohamed",
-         "status": "Offline"
-      }],
-      "id": "U4",
-      "email": "sherouk@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "1-1-2001",
-      "userName": "sama mohamed",
-      "posts": [],
-      "friends": [{
-         "FriendUserName": "sheroukwah",
-         "status": "Online"
-      }],
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U5",
-      "email": "sama@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "10-9-2004",
-      "userName": "abanoub",
-      "posts": [],
-      "friends": [],
-      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U9",
-      "email": "123@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "i am tired",
-      "dateOfBirth": "10-9-2004",
-      "userName": "hello",
-      "posts": [],
-      "friends": [
-         {
-            "FriendUserName": "abanoub",
+    {
+        "request": [],
+        "coverPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+        "bio": "hello",
+        "dateOfBirth": "10-9-2004",
+        "userName": "abanoub",
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+        "blocked": [],
+        "id": "U0",
+        "email": "bibosoliman20@icloud.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "10-9-2004",
+        "userName": "bibo",
+        "posts": [{
+            "Content": "hello from my post 1",
+            "Image": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+            "Timestamp": "2024-12-06T18:47:56.827043700"
+        }],
+        "friends": [],
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U1",
+        "email": "abanoub20@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
+        "bio": "new",
+        "dateOfBirth": "11-10-2023",
+        "userName": "shahd",
+        "posts": [],
+        "friends": [],
+        "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
+        "profilePhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\WIN_20241021_13_52_02_Pro.jpg",
+        "blocked": [],
+        "id": "U2",
+        "email": "shahdd@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "1-1-2002",
+        "userName": "sheroukwaheed",
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U3",
+        "email": "sher@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "1-1-2001",
+        "userName": "sheroukwah",
+        "posts": [
+            {
+                "Content": "lk",
+                "Image": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
+                "Timestamp": "2024-12-06T21:40:50.592403800"
+            },
+            {
+                "Content": "kjdjdj",
+                "Image": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (34).png",
+                "Timestamp": "2024-12-06T22:29:42.396084"
+            }
+        ],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [{
+            "FriendUserName": "sama mohamed",
             "status": "Offline"
-         },
-         {
-            "FriendUserName": "ann",
-            "status": "Offline"
-         }
-      ],
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
-      "profilePhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-      "blocked": [],
-      "id": "U7",
-      "email": "hello@gmial.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "10-9-2004",
-      "userName": "abanoub ",
-      "posts": [],
-      "friends": [],
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U8",
-      "email": "bob@gmial.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "10-9-2004",
-      "userName": "abanoub",
-      "posts": [],
-      "friends": [{
-         "FriendUserName": "hello",
-         "status": "Offline"
-      }],
-      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [],
-      "id": "U9",
-      "email": "123@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-      "bio": "hi hello",
-      "dateOfBirth": "29-6-2003",
-      "userName": "ann",
-      "posts": [{
-         "Content": "حفل افتتاح المهرجان",
-         "Image": "C:\\Users\\bibos_bz87qw5\\Downloads\\download (1).jpg",
-         "Timestamp": "2024-12-07T18:37:38.897055900"
-      }],
-      "friends": [{
-         "FriendUserName": "hello",
-         "status": "Offline"
-      }],
-      "password": "48220bd0854ced8b684a78da8f0400b317e310cf805457850f7ad4045ee93bfb",
-      "profilePhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
-      "blocked": [],
-      "id": "U10",
-      "email": "ann@gmail.com",
-      "status": "Offline"
-   },
-   {
-      "request": [],
-      "coverPhoto": "src/connect_hub/Images/cover.jpg",
-      "bio": "Update your bio ",
-      "dateOfBirth": "11-11-1981",
-      "userName": "refka Ne2a2",
-      "posts": [],
-      "friends": [],
-      "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
-      "profilePhoto": "src/connect_hub/Images/pp.png",
-      "blocked": [{
-         "FriendUserName": "ann",
-         "status": "Offline"
-      }],
-      "id": "U11",
-      "email": "refka@gmail.com",
-      "status": "Offline"
-   }
+        }],
+        "id": "U4",
+        "email": "sherouk@gmail.com",
+        "status": "Online"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "1-1-2001",
+        "userName": "sama mohamed",
+        "posts": [],
+        "friends": [{
+            "FriendUserName": "sheroukwah",
+            "status": "Online"
+        }],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U5",
+        "email": "sama@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "10-9-2000",
+        "userName": "ann",
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U6",
+        "email": "ann@gmail.com",
+        "status": "Online"
+    }
 ]
