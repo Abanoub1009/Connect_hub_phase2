@@ -14,7 +14,7 @@ public class GroupRepository {
     private final FileManager<Group> groupManager = new FileManager<>("groups.json", "G");
     private final String filePath;
 
-    public GroupRepository(String filePath, String idPrefix) {
+    public GroupRepository(String filePath) {
         this.filePath = filePath;
     }
 
@@ -99,6 +99,15 @@ public class GroupRepository {
         
         return group;
     }
-
-    // Serialize a Group object into a JSONObject
+    
+    public void addGroup(Group group) throws Exception {
+        ArrayList<Group> groups = getAllGroups();
+        groups.add(group);
+        saveGroups(groups);
+    }
+    public void deletGroup(Group group) throws Exception {
+        ArrayList<Group> groups = getAllGroups();
+        groups.remove(group);
+        saveGroups(groups);
+    }
 }
