@@ -58,6 +58,13 @@ public class PutUsers {
             friendJson.put("status", friend.isStatus());
             friendsBlockedArray.put(friendJson);
         }
+         JSONArray friendsSentArray = new JSONArray();
+        for (Friends friend : user.getSent()) {
+            JSONObject friendJson = new JSONObject();
+            friendJson.put("FriendUserName", friend.getFriendd());
+            friendJson.put("status", friend.isStatus());
+            friendsSentArray.put(friendJson);
+        }
         JSONArray postsArray = new JSONArray();
         for (Post post : user.getPosts()) {
             JSONObject postJson = new JSONObject();
@@ -71,6 +78,7 @@ public class PutUsers {
         userJson.put("request", friendsrequestedArray);
         userJson.put("blocked", friendsBlockedArray);
             userJson.put("friends", friendsArray);
+            userJson.put("sent", friendsSentArray);
         userJson.put("posts", postsArray);
         usersArray.put(userJson);
     }
