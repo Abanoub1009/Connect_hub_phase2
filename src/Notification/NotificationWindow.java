@@ -5,6 +5,8 @@
 package Notification;
 
 import connect_hub.FriendManagment.ListOfFriendsRequestedWindow;
+
+import connect_hub.Groups.GroupActivites;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
@@ -31,12 +33,14 @@ public class NotificationWindow extends javax.swing.JFrame {
     }
     public void load(){
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        String requestInfo = "Requests Notification " ;
-        String sentInfo = "sent Notification " ;
-        String groupInfo = "Groups Notifications " ;
+        String requestInfo = "Requests notification " ;
+        String sentInfo = "Sent notification " ;
+        String groupInfo = "Groups activities notifications " ;
+         
             listModel.addElement(requestInfo);
              listModel.addElement(sentInfo);
             listModel.addElement(groupInfo);
+          
              jList1.setModel(listModel);
     }
 
@@ -125,6 +129,12 @@ public class NotificationWindow extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(NotificationWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+        }
+         
+          if(index==2){
+              GroupActivites window=new  GroupActivites(email);
+              window.setVisible(true);
 
         }
     }//GEN-LAST:event_jButton1ActionPerformed

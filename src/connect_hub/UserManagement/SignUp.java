@@ -7,7 +7,7 @@ public class SignUp extends UserDetails {
     
     private PutUsers putUsers = new PutUsers();
     public SignUp(String userId, String email, String userName, String password, String dateOfBirth, String status) throws IOException {
-        super(userId, email, userName, password, dateOfBirth, status,null,null,null,null);
+        super(userId, email, userName, password, dateOfBirth, status,null,null,null,null,null);
         createAccount();     
     }
 

@@ -4,17 +4,59 @@
  */
 package connect_hub.Groups;
 
+import connect_hub.ContentCreation.Content;
+import connect_hub.ContentCreation.Post;
+import connect_hub.NewsFeed.ViewPostsWindow;
+import connect_hub.UserManagement.ReadUsers;
+import connect_hub.UserManagement.UserDetails;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
  */
 public class ListOfPostsOfGroup extends javax.swing.JFrame {
-
+String email;
+ArrayList<Content>posts;
+ArrayList<UserDetails>users;
+Group g;
     /**
      * Creates new form ListOfPostsOfGroup
      */
-    public ListOfPostsOfGroup() {
+    public ListOfPostsOfGroup(Group g,String email) {
         initComponents();
+       this.email=email;
+      this.g=g;
+      loadAllPosts();
+    }
+
+    public ListOfPostsOfGroup() {
+    }
+    public void loadAllPosts(){
+        posts=g.getPosts();
+        users=new ArrayList<>();
+      try {
+          users = ReadUsers.readUsersFromFile("users.json");
+      } catch (IOException ex) {
+          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        UserDetails user=new UserDetails();
+         UserDetails user2=new UserDetails();
+     user2=user2.getSpecificUser(users,email);
+         DefaultListModel<String>listModel=new DefaultListModel<>();
+         for(int i=0;i<posts.size();i++){
+                user=user.getSpecificUser3(users, posts.get(i).getAuthorId());
+                if(!user.equals(user2)){
+             String postInfo = "post"+i+" added by "+user.getUserName();
+            
+        listModel.addElement(postInfo);
+         }}
+       jList1.setModel(listModel);
     }
 
     /**
@@ -26,21 +68,71 @@ public class ListOfPostsOfGroup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(55, 204, 255));
+        jLabel1.setText("List of posts");
+
+        jScrollPane1.setViewportView(jList1);
+
+        jButton1.setText("Get post");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(jButton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    int index=jList1.getSelectedIndex();
+ if(index==-1){
+            JOptionPane.showMessageDialog(this,"Choose Group");
+        }
+        else{
+         Post p=(Post) posts.get(index);
+         
+         ViewPostsWindow window=new ViewPostsWindow(p);
+         window.setVisible(true);
+         }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +170,9 @@ public class ListOfPostsOfGroup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

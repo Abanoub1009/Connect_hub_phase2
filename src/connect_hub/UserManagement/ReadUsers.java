@@ -26,8 +26,20 @@ public class ReadUsers {
                 friendsList.add(new Friends(friendName, friendStatus)); // Adjust constructor
             }
         }
-        return friendsList;
-    }
+        return friendsList;}
+     
+      private static ArrayList<Friends> parseFriendsSent(JSONArray friendsArray) {
+        ArrayList<Friends> friendsList = new ArrayList<>();
+        if (friendsArray != null) {
+            for (int i = 0; i < friendsArray.length(); i++) {
+                JSONObject friendObject = friendsArray.getJSONObject(i);
+                // Parse friend object (adjust fields based on Friends class)
+                String friendName = friendObject.getString("FriendUserName"); // Example field
+                String friendStatus = friendObject.getString("status"); // Example field
+                friendsList.add(new Friends(friendName, friendStatus)); // Adjust constructor
+            }
+        }
+        return friendsList;}
      private static ArrayList<Friends> parseFriendsRequest(JSONArray friendsArray) {
         ArrayList<Friends> friendsList = new ArrayList<>();
         if (friendsArray != null) {
@@ -40,19 +52,7 @@ public class ReadUsers {
             }
         }
         return friendsList;
-    }
-      private static ArrayList<Friends> parseFriendsSent(JSONArray friendsArray) {
-        ArrayList<Friends> friendsList = new ArrayList<>();
-        if (friendsArray != null) {
-            for (int i = 0; i < friendsArray.length(); i++) {
-                JSONObject friendObject = friendsArray.getJSONObject(i);
-                // Parse friend object (adjust fields based on Friends class)
-                String friendName = friendObject.getString("FriendUserName"); // Example field
-                String friendStatus = friendObject.getString("status"); // Example field
-                friendsList.add(new Friends(friendName, friendStatus)); // Adjust constructor
-            }
-        }
-        return friendsList;
+        
     }
        private static ArrayList<Friends> parseFriendsBlock (JSONArray friendsArray) {
         ArrayList<Friends> friendsList = new ArrayList<>();

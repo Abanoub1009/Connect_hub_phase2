@@ -267,6 +267,14 @@ public class UserDetails {
         }
         return null;
     }
+    public UserDetails getSpecificUser3(ArrayList<UserDetails> users, String id) {
+        for (UserDetails user : users) {
+            if (user.getUserId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
 
     public static String getStatus(String userId) {
         try {

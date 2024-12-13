@@ -56,6 +56,7 @@ public class GroupRepository {
             String memberUsername = memberObject.getString("memberUsername");
             String role = memberObject.getString("role");
             Member member = new Member(memberUsername);
+            System.out.println(member);
             member.setRole(role);
             members.add(member);
         }

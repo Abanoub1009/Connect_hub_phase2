@@ -140,6 +140,10 @@ public class Group {
         requestPosts.remove(post);
         posts.add(post);
     }
+    public void rejectPost(Post post) {
+        requestPosts.remove(post);
+       
+    }
 
     // Methods to handle membership requests
     public void addMembershipRequest(Member member) {
@@ -154,5 +158,11 @@ public class Group {
     public void rejectMembershipRequest(Member member) {
         requestMembers.remove(member);
     }
+
+    @Override
+    public String toString() {
+        return "Group{" + "groupId=" + groupId + ", name=" + name + ", description=" + description + ", groupPhoto=" + groupPhoto + ", createdBy=" + createdBy + ", createdAt=" + createdAt + ", members=" + members + ", posts=" + posts + ", requestPosts=" + requestPosts + ", requestMembers=" + requestMembers + '}';
+    }
+    
 }
 

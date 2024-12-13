@@ -80,5 +80,11 @@ public class Post implements Content {
         }
         return authorName;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" + "id=" + id + ", authorId=" + authorId + ", caption=" + caption + ", photo=" + photo + ", timestamp=" + timestamp + '}';
+    }
+    
 }
 
