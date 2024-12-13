@@ -18,45 +18,52 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class MemberrequestWindow extends javax.swing.JFrame {
-Group g;
-String email;
-ArrayList<Member>members;
-ArrayList<UserDetails>users;
-GroupRepository r;
+
+    Group g;
+    String email;
+    ArrayList<Member> members;
+    ArrayList<UserDetails> users;
+    ArrayList<Group> groups;
+    GroupRepository r;
+
     /**
      * Creates new form MemberrequestWindow
      */
-    public MemberrequestWindow(Group g,String email) {
+    public MemberrequestWindow(Group g, String email) {
         initComponents();
-        this.g=g;
-        this.email=email;
-        r=new GroupRepository("groups.json");
+        this.g = g;
+        this.email = email;
+        r = new GroupRepository("groups.json");
         openWindow();
     }
 
     public MemberrequestWindow() {
     }
-    
-    public void openWindow(){
-      users=new ArrayList<>();
-      try {
-          users = ReadUsers.readUsersFromFile("users.json");
-      } catch (IOException ex) {
-          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-      members=g.getRequestMembers();
-      System.out.println(members);
-       DefaultListModel<String>listModel=new DefaultListModel<>();
-        for(int i=0;i<members.size();i++){
-             
-             String postInfo = "UserName:"+members.get(i).getMemberUsername();
-            
-        listModel.addElement(postInfo);
-         }
-         jList1.setModel(listModel);
-  }
+
+    public void openWindow() {
+        users = new ArrayList<>();
+        try {
+            users = ReadUsers.readUsersFromFile("users.json");
+        } catch (IOException ex) {
+            Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        UserDetails user = new UserDetails();
+        user = user.getSpecificUser(users, email);
+        members = g.getRequestMembers();
+        for (Member member : members) {
+            System.out.println("the name of request " + member.getMemberUsername());
+            break;
+        }
+        System.out.println(members);
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (int i = 0; i < members.size(); i++) {
+
+            String postInfo = "UserName:" + members.get(i).getMemberUsername();
+
+            listModel.addElement(postInfo);
+        }
+        jList1.setModel(listModel);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,20 +138,57 @@ GroupRepository r;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      int index=jList1.getSelectedIndex();
-     Member m= members.get(index);
-      g.approveMembershipRequest(m);
-      
-      JOptionPane.showMessageDialog(this, "Member added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-      openWindow();
+        try {
+            int index = jList1.getSelectedIndex();
+            groups = new ArrayList<>();
+            groups = r.getAllGroups();
+            Member m = members.get(index);
+            Member tmp = new Member();
+            for (Group group : groups) {
+                if (group.getGroupId().equals(g.getGroupId())) {
+                    for (Member member : group.getRequestMembers()) {
+                        if (member.getMemberUsername().equals(m.getMemberUsername())) {
+                            tmp = member;
+                            System.out.println("Done");
+                            break;
+                        }
+                    }
+                    group.approveMembershipRequest(tmp);
+                }
+            }
+            r.saveGroups(groups);
+            JOptionPane.showMessageDialog(this, "Member added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            openWindow();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int index=jList1.getSelectedIndex();
-     Member m= members.get(index);
-      g.rejectMembershipRequest(m);
-      JOptionPane.showMessageDialog(this, "Member rejected successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-      openWindow();
+        int index = jList1.getSelectedIndex();
+        groups = new ArrayList<>();
+        groups = r.getAllGroups();
+        Member m = members.get(index);
+        Member tmp = new Member();
+        for (Group group : groups) {
+            if (group.getGroupId().equals(g.getGroupId())) {
+                for (Member member : group.getRequestMembers()) {
+                    if (member.getMemberUsername().equals(m.getMemberUsername())) {
+                        tmp = member;
+                        System.out.println("Done");
+                        break;
+                    }
+                }
+                group.rejectMembershipRequest(tmp);
+            }
+        }
+        try {
+            r.saveGroups(groups);
+            openWindow();
+        } catch (IOException ex) {
+            Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(this, "Member rejected successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

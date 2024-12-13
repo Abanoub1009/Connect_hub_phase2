@@ -11,25 +11,28 @@ import javax.swing.ImageIcon;
  * @author HP
  */
 public class PrimaryAdminWindow extends javax.swing.JFrame {
- Group g;
+
+    Group g;
     String email;
+
     /**
      * Creates new form PrimaryAdminWindow
      */
-    public PrimaryAdminWindow(Group g,String email) {
+    public PrimaryAdminWindow(Group g, String email) {
         initComponents();
-        this.g=g;
-        this.email=email;
+        this.g = g;
+        this.email = email;
         openWindow();
     }
 
     public PrimaryAdminWindow() {
     }
-    public void openWindow(){
+
+    public void openWindow() {
         ImageIcon i = new ImageIcon(g.getGroupPhoto());
-         jLabel1.setIcon(i);
-         jLabel2.setText(g.getName());
-          jLabel3.setText(g.getDescription());
+        jLabel1.setIcon(i);
+        jLabel2.setText(g.getName());
+        jLabel3.setText(g.getDescription());
     }
 
     /**
@@ -67,6 +70,11 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
         });
 
         jButton2.setText("Add post");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Get members");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -148,28 +156,32 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ListOfPostsOfGroup window=new   ListOfPostsOfGroup(g,email);
+        ListOfPostsOfGroup window = new ListOfPostsOfGroup(g, email);
         window.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        GetMembersWindow window=new GetMembersWindow(g,email);
+        GetMembersWindow window = new GetMembersWindow(g, email);
         window.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        MemberrequestWindow window= new    MemberrequestWindow (g,email);
+        MemberrequestWindow window = new MemberrequestWindow(g, email);
         window.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        PostRequestWindow window=new PostRequestWindow(g,email);
+        PostRequestWindow window = new PostRequestWindow(g, email);
         window.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

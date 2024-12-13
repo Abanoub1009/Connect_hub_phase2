@@ -25,6 +25,8 @@ Group g;
 String email;
 ArrayList<Content>posts;
 ArrayList<UserDetails>users;
+ArrayList<Group>groups;
+GroupRepository r;
     /**
      * Creates new form PostRequestWindow
      */
@@ -32,6 +34,8 @@ ArrayList<UserDetails>users;
         initComponents();
         this.g=g;
         this.email=email;
+        this.groups=new ArrayList<>();
+        r=new GroupRepository("groups.json");
         openWindow();
     }
 
@@ -161,10 +165,22 @@ ArrayList<UserDetails>users;
             JOptionPane.showMessageDialog(this,"Choose Group");
         }
         else{
-       Post p=(Post) posts.get(index);
-         g.addRequestPost(p);
-           JOptionPane.showMessageDialog(this, "Post added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-           openWindow();
+   
+      groups=r.getAllGroups();
+      System.out.println(groups);
+      Post post= (Post) posts.get(index);
+    
+      for(int i=0;i<groups.size();i++){
+          if(groups.get(i).getGroupId().equals(g.getGroupId())){
+              groups.get(i).approvePost(post);
+              try {
+                  r.saveGroups(groups);
+              } catch (IOException ex) {
+                  Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+              }
+          }
+      }
+    
  }
     }//GEN-LAST:event_jButton1ActionPerformed
 

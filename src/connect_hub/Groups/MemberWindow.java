@@ -117,7 +117,7 @@ public class MemberWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       GetMembersWindow window=new GetMembersWindow(g,email);
+       GetMemberForMember window=new GetMemberForMember(g, email);
        window.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 

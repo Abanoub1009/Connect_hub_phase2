@@ -1,5 +1,3 @@
-
-
 package connect_hub.UserManagement;
 
 import connect_hub.ContentCreation.Post;
@@ -30,10 +28,11 @@ public class UserDetails {
     private String coverPhoto;
     private ArrayList<Friends> friends;
     private ArrayList<Post> posts;
-    private ArrayList<Friends>request;
-    private ArrayList<Friends>blocked;
-    private ArrayList<Friends>sent;
-    public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts,ArrayList<Friends> request,ArrayList<Friends> blocked,ArrayList<Friends>sent) {
+    private ArrayList<Friends> request;
+    private ArrayList<Friends> blocked;
+    private ArrayList<Friends> sent;
+
+    public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts, ArrayList<Friends> request, ArrayList<Friends> blocked, ArrayList<Friends> sent) {
         this.userId = userId;
         this.email = email;
         this.userName = userName;
@@ -47,9 +46,9 @@ public class UserDetails {
         this.coverPhoto = "src/connect_hub/Images/cover.jpg";
         this.friends = (friends == null) ? new ArrayList<>() : friends;
         this.posts = (posts == null) ? new ArrayList<>() : posts;
-         this.request = (request == null) ? new ArrayList<>() : request;
-        this.blocked = (blocked == null) ? new ArrayList<>() :blocked;
-        this.sent = (sent == null) ? new ArrayList<>() :sent;
+        this.request = (request == null) ? new ArrayList<>() : request;
+        this.blocked = (blocked == null) ? new ArrayList<>() : blocked;
+        this.sent = (sent == null) ? new ArrayList<>() : sent;
     }
 
 //    public UserDetails() {
@@ -67,9 +66,9 @@ public class UserDetails {
         this.coverPhoto = "";
         this.friends = new ArrayList<>();
         this.posts = new ArrayList<>();
-        this.blocked=new ArrayList<>();
-        this.request=new ArrayList<>();
-        this.sent=new ArrayList<>();
+        this.blocked = new ArrayList<>();
+        this.request = new ArrayList<>();
+        this.sent = new ArrayList<>();
     }
 
     public String getBio() {
@@ -259,6 +258,7 @@ public class UserDetails {
         }
         return null;
     }
+
     public UserDetails getSpecificUser2(ArrayList<UserDetails> users, String userName) {
         for (UserDetails user : users) {
             if (user.getUserName().equals(userName)) {
@@ -267,6 +267,7 @@ public class UserDetails {
         }
         return null;
     }
+
     public UserDetails getSpecificUser3(ArrayList<UserDetails> users, String id) {
         for (UserDetails user : users) {
             if (user.getUserId().equals(id)) {
@@ -315,19 +316,21 @@ public class UserDetails {
     public void setBlocked(ArrayList<connect_hub.UserManagement.Friends> blocked) {
         this.blocked = blocked;
     }
-    
 
     @Override
     public String toString() {
         return "UserDetails{" + "userId=" + userId + ", email=" + email + ", userName=" + userName + ", password=" + password + ", storePassword=" + storePassword + ", dateOfBirth=" + dateOfBirth + ", status=" + status + ", bio=" + bio + ", profilePhoto=" + profilePhoto + ", coverPhoto=" + coverPhoto + ", friends=" + friends + ", posts=" + posts + '}';
     }
-    public void addFriend(Friends friend){
+
+    public void addFriend(Friends friend) {
         friends.add(friend);
     }
-    public void addBlockedFriend(Friends friend){
+
+    public void addBlockedFriend(Friends friend) {
         blocked.add(friend);
     }
-     public void addSentFriend(Friends friend){
+
+    public void addSentFriend(Friends friend) {
         sent.add(friend);
     }
 
@@ -339,11 +342,8 @@ public class UserDetails {
         this.sent = sent;
     }
 
-
-    
-
     public void addRequestFriend(Friends friendSender) {
         request.add(friendSender);
-}
+    }
 
 }

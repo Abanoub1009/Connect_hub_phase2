@@ -1,6 +1,5 @@
 package connect_hub.Groups;
 
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -8,6 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class GroupService {
+
     private final GroupRepository groupRepository;
     private final PermissionService permissionService;
 
@@ -23,29 +23,24 @@ public class GroupService {
         Member primaryAdmin = new Member(createdBy);
         primaryAdmin.setRole("primary_admin");
         members.add(primaryAdmin);
-        Group group = new Group(groupId,name,createdBy,createdAt);
+        Group group = new Group(groupId, name, createdBy, createdAt);
         group.setDescription(description);
         group.setGroupPhoto(groupPhoto);
         group.setMembers(members);
 
         groupRepository.addGroup(group);
+        System.out.println("DONE" + " " + group.getName());
     }
 
-    public void promoteToAdmin(String groupName, String username, String targetUsername) throws Exception {
+    public void promoteToAdmin(String groupName, String targetUsername) throws Exception {
         Group group = findGroupById(groupName);
-        if (!permissionService.canPromoteOrDemote(username, group)) {
-            throw new Exception("Permission denied: Only the primary admin can promote or demote admins.");
-        }
-
         updateMemberRole(group, targetUsername, "admin");
     }
 
     private Group findGroupById(String groupName) throws Exception {
         ArrayList<Group> groups = groupRepository.getAllGroups();
-        for(Group group: groups)
-        {
-            if(group.getName().equals(groupName))
-            {
+        for (Group group : groups) {
+            if (group.getName().equals(groupName)) {
                 return group;
             }
         }
@@ -64,4 +59,15 @@ public class GroupService {
         }
         throw new Exception("User not found in the group.");
     }
+
+    public Group getGroupByName(String groupName) throws Exception {
+        ArrayList<Group> groups = groupRepository.getAllGroups();
+        for (Group group : groups) {
+            if (group.getName().equals(groupName)) {
+                return group;
+            }
+        }
+        throw new Exception("Group not found: " + groupName);
+    }
 }
+

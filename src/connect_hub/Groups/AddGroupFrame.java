@@ -21,15 +21,17 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class AddGroupFrame extends javax.swing.JFrame {
-String email;
- ArrayList<UserDetails> userList;
- String ProfilePhotoPath;
+
+    String email;
+    ArrayList<UserDetails> userList;
+    String ProfilePhotoPath;
+
     /**
      * Creates new form AddGroupFrame
      */
     public AddGroupFrame(String email) {
         initComponents();
-        this.email=email;
+        this.email = email;
     }
 
     public AddGroupFrame() {
@@ -172,7 +174,7 @@ String email;
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     userList = new ArrayList<>();
+        userList = new ArrayList<>();
         try {
             userList = ReadUsers.readUsersFromFile("users.json");
         } catch (IOException e) {
@@ -182,23 +184,24 @@ String email;
 
         UserDetails user = new UserDetails();
         user = user.getSpecificUser(userList, email);
-        
-    String name=   jTextField1.getText();
-    String description=jTextField2.getText();
-    String photo=ProfilePhotoPath;
-    System.out.println(photo);
-    GroupService newGroup=new GroupService();
-    try {
-        newGroup.createGroup(name, description, photo,user.getUserName());
-    } catch (Exception ex) {
-        Logger.getLogger(AddGroupFrame.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    JOptionPane.showMessageDialog(this, "Group added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-    
+
+        String name = jTextField1.getText();
+        String description = jTextField2.getText();
+        String photo = ProfilePhotoPath;
+        System.out.println(photo);
+        GroupService newGroup = new GroupService();
+        try {
+            newGroup.createGroup(name, description, photo, user.getUserName());
+            System.out.println("done");
+        } catch (Exception ex) {
+            Logger.getLogger(AddGroupFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(this, "Group added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     JFileChooser fileChooser = new JFileChooser();
+        JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Select Profile Photo");
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
@@ -211,17 +214,18 @@ String email;
             File selectedFile = fileChooser.getSelectedFile();
 
             // Update the user's cover photo (you might want to save this to the user's profile)
-             ProfilePhotoPath = selectedFile.getAbsolutePath();
+            ProfilePhotoPath = selectedFile.getAbsolutePath();
 
             // Display the selected image in the cover photo label
             ImageIcon coverIcon = new ImageIcon(ProfilePhotoPath);
             Image image = coverIcon.getImage();
-            int width = (int) (jLabel1.getWidth() * 1);
-            int height = (int) (jLabel1.getHeight() * 1);
+            int width = (int) (jLabel5.getWidth() * 1);
+            int height = (int) (jLabel5.getHeight() * 1);
             Image scaled = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             ImageIcon scaledimage = new ImageIcon(scaled);
 
-            jLabel5.setIcon(scaledimage);}
+            jLabel5.setIcon(scaledimage);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
