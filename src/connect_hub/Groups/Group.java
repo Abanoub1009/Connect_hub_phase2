@@ -17,11 +17,11 @@ public class Group {
     private ArrayList<Member> requestMembers; // Membership requests
 
     // Constructor
-    public Group(String groupId, String name,String createdBy, String createdAt) {
+    public Group(String groupId, String name,String createdBy, String createdAt,String groupPhoto) {
         this.groupId = groupId;
         this.name = name;
         this.description = "";
-        this.groupPhoto = "src/connect_hub/Images/pp.png";
+        this.groupPhoto = groupPhoto;
         this.createdBy = createdBy;
         this.createdAt = createdAt;
         this.members = new ArrayList<>();
@@ -108,6 +108,7 @@ public class Group {
     }
 
     public ArrayList<Member> getRequestMembers() {
+        System.out.println(requestMembers);
         return requestMembers;
     }
 

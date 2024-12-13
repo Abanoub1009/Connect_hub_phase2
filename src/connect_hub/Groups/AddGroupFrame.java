@@ -216,8 +216,8 @@ String email;
             // Display the selected image in the cover photo label
             ImageIcon coverIcon = new ImageIcon(ProfilePhotoPath);
             Image image = coverIcon.getImage();
-            int width = (int) (jLabel1.getWidth() * 1);
-            int height = (int) (jLabel1.getHeight() * 1);
+            int width = (int) (jLabel5.getWidth() * 1);
+            int height = (int) (jLabel5.getHeight() * 1);
             Image scaled = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             ImageIcon scaledimage = new ImageIcon(scaled);
 

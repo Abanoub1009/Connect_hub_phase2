@@ -23,9 +23,9 @@ public class GroupService {
         Member primaryAdmin = new Member(createdBy);
         primaryAdmin.setRole("primary_admin");
         members.add(primaryAdmin);
-        Group group = new Group(groupId,name,createdBy,createdAt);
+        Group group = new Group(groupId,name,createdBy,createdAt,groupPhoto);
         group.setDescription(description);
-        group.setGroupPhoto(groupPhoto);
+      //  group.setGroupPhoto(groupPhoto);
         group.setMembers(members);
 
         groupRepository.addGroup(group);

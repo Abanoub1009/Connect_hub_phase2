@@ -1,6 +1,7 @@
 package connect_hub;
 
 import connect_hub.ContentCreation.*;
+import connect_hub.Groups.Group;
 import connect_hub.UserManagement.*;
 import java.io.*;
 import java.lang.reflect.Field;
@@ -110,7 +111,24 @@ public class FileManager<T> {
                     e.printStackTrace();
                 }
             }
-        } else if (object instanceof UserDetails) {
+        }else if(object instanceof Group){
+            Group group=(Group)object;
+                Field[] fields = Group.class.getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                try {
+                    Object value = field.get(group);
+                    if (field.getName().equals("id")) {
+                        jsonObject.put(field.getName(), newId);
+                    } else {
+                        jsonObject.put(field.getName(), value);
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            
+        }}
+        else if (object instanceof UserDetails) {
             jsonObject.put("id", newId);
             UserDetails userDetails = (UserDetails) object;
 

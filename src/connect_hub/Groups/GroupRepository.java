@@ -45,7 +45,7 @@ public class GroupRepository {
         String createdAt = jsonObject.getString("createdAt");
         String description = jsonObject.getString("description");
         String groupPhoto = jsonObject.getString("groupPhoto");
-        Group group = new Group(id, name, createdBy, createdAt);
+        Group group = new Group(id, name, createdBy, createdAt,groupPhoto);
         group.setDescription(description);
         group.setGroupPhoto(groupPhoto);
         // Parse members

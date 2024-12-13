@@ -3,7 +3,7 @@
     "groupId":"100",
     "name":"CCE",
     "description":"For students",
-    "groupPhoto":"",
+    "groupPhoto":"src/connect_hub/Images/cover.jpg",
     "createdBy":"adamm",
     "createdAt":"",
     "members":[
@@ -19,14 +19,14 @@
     "posts":[
         {
             "caption": "hello from my post 1",
-            "photo": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+            "photo": "src/connect_hub/Images/p.jpg",
             "id": "P0",
             "authorId": "U8",
             "timestamp": "2024-12-06T22:29:42.399397500"
         },
         {
             "caption": "lk",
-            "photo": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
+            "photo": "src/connect_hub/Images/p.jpg",
             "id": "P1",
             "authorId": "U7",
             "timestamp": "2024-12-06T22:29:42.399397500"
@@ -43,7 +43,7 @@
     "groupId":"101",
     "name":"Computer",
     "description":"For Doctors",
-    "groupPhoto":"",
+    "groupPhoto":"src/connect_hub/Images/cover.jpg",
     "createdBy":"shahd",
     "createdAt":"",
     "members":[
@@ -51,12 +51,16 @@
           "memberUsername":"adamm",
           "role":"member"
         },
-      
+       
           {
             
                 "memberUsername":"shahd",
                 "role":"primary_admin"
               
+          },
+          {
+            "memberUsername":"tokaa",
+            "role":"admin"
           }
 
     ],
@@ -64,7 +68,7 @@
         
         {
             "caption": "lk",
-            "photo": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
+            "photo": "src/connect_hub/Images/photo.jpg",
             "id": "P1",
             "authorId": "U7",
             "timestamp": "2024-12-06T22:29:42.399397500"
@@ -73,7 +77,7 @@
     "requestPosts":[
         {
             "caption": "hello from my post 1",
-            "photo": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+            "photo": "src/connect_hub/Images/p.jpg",
             "id": "P0",
             "authorId": "U8",
             "timestamp": "2024-12-06T22:29:42.399397500"

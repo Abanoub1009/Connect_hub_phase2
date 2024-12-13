@@ -18,7 +18,7 @@ String userName;
         this.groups=new ArrayList<>();
         this.userGroups=new ArrayList<>();
         this.userName=userName;
-        System.out.println(userName);
+        
         loadAllGroups();
         
     }

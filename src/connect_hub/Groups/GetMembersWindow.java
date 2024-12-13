@@ -18,38 +18,46 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class GetMembersWindow extends javax.swing.JFrame {
-Group g;
-String email;
-ArrayList<Member>members;
-ArrayList<UserDetails>users;
+
+    Group g;
+    String email;
+    ArrayList<Member> members;
+    ArrayList<UserDetails> users;
+    ArrayList<Group> groups;
+    GroupRepository r;
+
     /**
      * Creates new form GetMembersWindow
      */
-    public GetMembersWindow(Group g,String email) {
+    public GetMembersWindow(Group g, String email) {
         initComponents();
-        this.g=g;
-        this.email=email;
+        this.g = g;
+        this.email = email;
+        r = new GroupRepository("groups.json");
         openWindow();
     }
-  public void openWindow(){
-      users=new ArrayList<>();
-      try {
-          users = ReadUsers.readUsersFromFile("users.json");
-      } catch (IOException ex) {
-          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-      members=g.getMembers();
-       DefaultListModel<String>listModel=new DefaultListModel<>();
-        for(int i=0;i<members.size();i++){
-             if(!user.getUserName().equals(members.get(i).getMemberUsername())){
-             String postInfo = "UserName:"+members.get(i).getMemberUsername()+"    Role:"+members.get(i).getRole();
-            
-        listModel.addElement(postInfo);
-         }}
-         jList1.setModel(listModel);
-  }
+
+    public void openWindow() {
+        users = new ArrayList<>();
+        try {
+            users = ReadUsers.readUsersFromFile("users.json");
+        } catch (IOException ex) {
+            Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        UserDetails user = new UserDetails();
+        user = user.getSpecificUser(users, email);
+        members = g.getMembers();
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (int i = 0; i < members.size(); i++) {
+            if (!user.getUserName().equals(members.get(i).getMemberUsername())) {
+                String postInfo = "UserName:" + members.get(i).getMemberUsername() + "    Role:" + members.get(i).getRole();
+
+                listModel.addElement(postInfo);
+            }
+        }
+        jList1.setModel(listModel);
+    }
+
     public GetMembersWindow() {
     }
 
@@ -115,39 +123,50 @@ ArrayList<UserDetails>users;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         int index=jList1.getSelectedIndex();
-        users=new ArrayList<>();
-      try {
-          users = ReadUsers.readUsersFromFile("users.json");
-      } catch (IOException ex) {
-          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-         members=g.getMembers();
-         Member m=members.get(index);
-         System.out.println(m);
-         for(Member member:members){
-             
-             if(member.getMemberUsername().equals(user.getUserName())){
-                 String x=member.getRole();
-                 System.out.println(x);
-                 if(x.equals("admin")||x.equals("primary_admin")){
-                     if(m.getRole().equals("primary_admin")){
-                            JOptionPane.showMessageDialog(this, "Can't remove this member", "Error", JOptionPane.ERROR_MESSAGE);
-                     }
-                     else{  
-                         g.removeMember(m);
-                         JOptionPane.showMessageDialog(this, "Member removed successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-                         openWindow();
-                     }
-                 }
-                 else{
-                     JOptionPane.showMessageDialog(this, "Only admins can remove members", "Error", JOptionPane.ERROR_MESSAGE);
-                 }
-         }}
-         openWindow();
-         
+        int index = jList1.getSelectedIndex();
+        users = new ArrayList<>();
+        try {
+            users = ReadUsers.readUsersFromFile("users.json");
+        } catch (IOException ex) {
+            Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        UserDetails user = new UserDetails();
+        user = user.getSpecificUser(users, email);
+        members = g.getMembers();
+        Member m = members.get(index);
+        System.out.println(m);
+        for (Member member : members) {
+
+            if (member.getMemberUsername().equals(user.getUserName())) {
+                String x = member.getRole();
+                System.out.println(x);
+                if (x.equals("admin") || x.equals("primary_admin")) {
+                    if (m.getRole().equals("primary_admin")) {
+                        JOptionPane.showMessageDialog(this, "Can't remove this member", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        groups = new ArrayList<>();
+                        groups = r.getAllGroups();
+
+                        for (int i = 0; i < groups.size(); i++) {
+                            if (groups.get(i).getGroupId().equals(g.getGroupId())) {
+                                groups.get(i).removeMember(m);
+                                try {
+                                    r.saveGroups(groups);
+                                } catch (IOException ex) {
+                                    Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
+                        }
+                        JOptionPane.showMessageDialog(this, "Member removed successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        openWindow();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Only admins can remove members", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        openWindow();
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

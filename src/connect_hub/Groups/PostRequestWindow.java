@@ -6,6 +6,7 @@ package connect_hub.Groups;
 
 import connect_hub.ContentCreation.Content;
 import connect_hub.ContentCreation.Post;
+import connect_hub.Groups.MemberrequestWindow;
 import connect_hub.NewsFeed.ViewPostsWindow;
 import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
@@ -25,6 +26,8 @@ Group g;
 String email;
 ArrayList<Content>posts;
 ArrayList<UserDetails>users;
+ArrayList<Group>groups;
+GroupRepository r;
     /**
      * Creates new form PostRequestWindow
      */
@@ -32,6 +35,8 @@ ArrayList<UserDetails>users;
         initComponents();
         this.g=g;
         this.email=email;
+        this.groups=new ArrayList<>();
+        r=new GroupRepository("groups.json");
         openWindow();
     }
 
@@ -49,7 +54,7 @@ ArrayList<UserDetails>users;
         user=user.getSpecificUser(users, email);
   
        DefaultListModel<String>listModel=new DefaultListModel<>();
-        for(int i=0;i<g.getPosts().size();i++){
+        for(int i=0;i<g.getRequestPosts().size();i++){
             
              String postInfo = "Post"+i;
             
@@ -161,10 +166,22 @@ ArrayList<UserDetails>users;
             JOptionPane.showMessageDialog(this,"Choose Group");
         }
         else{
-       Post p=(Post) posts.get(index);
-         g.addRequestPost(p);
-           JOptionPane.showMessageDialog(this, "Post added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-           openWindow();
+   
+      groups=r.getAllGroups();
+      
+      Post post= (Post) posts.get(index);
+    
+      for(int i=0;i<groups.size();i++){
+          if(groups.get(i).getGroupId().equals(g.getGroupId())){
+              groups.get(i).approvePost(post);
+              try {
+                  r.saveGroups(groups);
+              } catch (IOException ex) {
+                  Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+              }
+          }
+      }
+    
  }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -173,11 +190,20 @@ ArrayList<UserDetails>users;
  if(index==-1){
             JOptionPane.showMessageDialog(this,"Choose Group");
         }
-        else{
-       Post p=(Post) posts.get(index);
-         g.rejectPost(p);
-           JOptionPane.showMessageDialog(this, "Post rejected successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-           openWindow();
+ else{groups=r.getAllGroups();
+    
+      Post post= (Post) posts.get(index);
+    
+      for(int i=0;i<groups.size();i++){
+          if(groups.get(i).getGroupId().equals(g.getGroupId())){
+              groups.get(i).rejectPost(post);
+              try {
+                  r.saveGroups(groups);
+              } catch (IOException ex) {
+                  Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+              }
+          }
+      }
  }
     }//GEN-LAST:event_jButton2ActionPerformed
 

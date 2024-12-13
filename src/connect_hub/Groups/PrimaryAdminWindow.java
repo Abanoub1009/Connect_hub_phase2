@@ -4,6 +4,7 @@
  */
 package connect_hub.Groups;
 
+import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -26,8 +27,17 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
     public PrimaryAdminWindow() {
     }
     public void openWindow(){
-        ImageIcon i = new ImageIcon(g.getGroupPhoto());
-         jLabel1.setIcon(i);
+      String photoPath = g.getGroupPhoto().replace("\\", "/");
+    System.out.println(photoPath);
+ImageIcon icon = new ImageIcon(photoPath);
+
+// Resize the image to fit the label
+Image image = icon.getImage().getScaledInstance(
+    jLabel1.getWidth(),
+    jLabel1.getHeight(),
+    Image.SCALE_SMOOTH
+);
+jLabel1.setIcon(new ImageIcon(image));
          jLabel2.setText(g.getName());
           jLabel3.setText(g.getDescription());
     }
@@ -55,8 +65,12 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
 
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cover Photo"));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(55, 204, 255));
         jLabel2.setText("Group name");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(55, 204, 255));
         jLabel3.setText("Group description");
 
         jButton1.setText("Get posts");
@@ -108,8 +122,8 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,7 +155,7 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
                     .addComponent(jButton5)
                     .addComponent(jButton6)
                     .addComponent(jButton4))
-                .addGap(0, 107, Short.MAX_VALUE))
+                .addGap(0, 99, Short.MAX_VALUE))
         );
 
         pack();
