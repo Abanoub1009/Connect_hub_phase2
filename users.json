@@ -55,10 +55,13 @@
         "blocked": [],
         "id": "U2",
         "email": "shahdd@gmail.com",
-        "status": "Online"
+        "status": "Offline"
     },
     {
-        "request": [],
+        "request": [{
+            "FriendUserName": "samaher ezz",
+            "status": "Offline"
+        }],
         "coverPhoto": "src/connect_hub/Images/cover.jpg",
         "bio": "Update your bio ",
         "dateOfBirth": "1-1-2002",
@@ -123,7 +126,10 @@
         "status": "Offline"
     },
     {
-        "request": [],
+        "request": [{
+            "FriendUserName": "samaher ezz",
+            "status": "Offline"
+        }],
         "coverPhoto": "src/connect_hub/Images/cover.jpg",
         "bio": "Update your bio ",
         "dateOfBirth": "10-9-2000",
@@ -158,7 +164,7 @@
         "blocked": [],
         "id": "U7",
         "email": "adam@gmail.com",
-        "status": "Online"
+        "status": "Offline"
     },
     {
         "request": [],
@@ -177,6 +183,31 @@
         "blocked": [],
         "id": "U8",
         "email": "toka@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "1-1-1970",
+        "userName": "samaher ezz",
+        "sent": [
+            {
+                "FriendUserName": "sheroukwaheed",
+                "status": "Offline"
+            },
+            {
+                "FriendUserName": "ann",
+                "status": "Offline"
+            }
+        ],
+        "posts": [],
+        "friends": [],
+        "password": "ffb782d88cca01f016621036a41e1497ecd0d20a91f38b7edd2f0877aa0b8e5f",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U9",
+        "email": "samaher@gmail.com",
         "status": "Online"
     }
 ]
