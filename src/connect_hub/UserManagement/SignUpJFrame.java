@@ -42,9 +42,9 @@ public class SignUpJFrame extends javax.swing.JFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(577, 336));
+        setPreferredSize(new java.awt.Dimension(740, 400));
 
         jInternalFrame1.setVisible(true);
 
@@ -112,6 +112,8 @@ public class SignUpJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Sign Up");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +142,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
                             .addComponent(jPasswordField1)
                             .addComponent(jFormattedTextField1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
+                        .addGap(265, 265, 265)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

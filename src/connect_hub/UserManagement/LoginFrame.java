@@ -1,6 +1,6 @@
 package connect_hub.UserManagement;
 
-import connect_hub.NewsFeed.gui;
+import connect_hub.NewsFeed.Gui;
 import connect_hub.ProfileManagment.EditProfileWindow;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -45,10 +45,6 @@ public class LoginFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Andalus", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 204, 255));
         jLabel2.setText("Password:");
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
 
         jInternalFrame1.setVisible(true);
 
@@ -101,7 +97,7 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addComponent(jTextField1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(289, 289, 289)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -151,7 +147,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 jTextField1.setText("");
                 jPasswordField1.setText("");
                 setVisible(false);
-                new gui(email).setVisible(true);
+                new Gui(email).setVisible(true);
             } else if (result.equals("invalidEmail")) {
                 JOptionPane.showMessageDialog(this, "Invalid email address.", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (result.equals("invalidPassword")) {
