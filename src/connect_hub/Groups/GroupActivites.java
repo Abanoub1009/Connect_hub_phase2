@@ -47,7 +47,7 @@ public class GroupActivites extends javax.swing.JFrame {
         user=user.getSpecificUser(users, email);
         getGroupsOfUser rep=new  getGroupsOfUser(user.getUserName());
       group=rep.getGroupsofSpecifiecUser();
-     
+      System.out.println(group);
         DefaultListModel<String>listModel=new DefaultListModel<>();
          for(int i=0;i<group.size();i++){
              String postInfo = group.get(i).getName();

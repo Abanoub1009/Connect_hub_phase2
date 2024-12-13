@@ -32,20 +32,20 @@ public class GroupRepository {
 
     // Save all groups to file
     public void saveGroups(ArrayList<Group> groups) throws IOException {
-
+        groupManager.deleteJsonFile();
         for (Group group : groups) {
             groupManager.writeToJson(group);
         }
     }
 
     private Group parseGroup(JSONObject jsonObject) {
-        String id = jsonObject.getString("groupId");
+        String id = jsonObject.getString("id");
         String name = jsonObject.getString("name");
         String createdBy = jsonObject.getString("createdBy");
         String createdAt = jsonObject.getString("createdAt");
         String description = jsonObject.getString("description");
         String groupPhoto = jsonObject.getString("groupPhoto");
-        Group group = new Group(id, name, createdBy, createdAt,groupPhoto);
+        Group group = new Group(id, name, createdBy, createdAt);
         group.setDescription(description);
         group.setGroupPhoto(groupPhoto);
         // Parse members
@@ -89,7 +89,7 @@ public class GroupRepository {
         JSONArray requestMemberArray = jsonObject.getJSONArray("requestMembers");
         ArrayList<Member> requestMembers = new ArrayList<>();
         for (int i = 0; i < requestMemberArray.length(); i++) {
-            JSONObject memberObject = membersArray.getJSONObject(i);
+            JSONObject memberObject = requestMemberArray.getJSONObject(i);
             String memberUsername = memberObject.getString("memberUsername");
             String role = memberObject.getString("role");
             Member member = new Member(memberUsername);

@@ -4,7 +4,6 @@
  */
 package connect_hub.Groups;
 
-import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -27,17 +26,8 @@ public class MemberWindow extends javax.swing.JFrame {
     public MemberWindow() {
     }
     public void openWindow(){
-       String photoPath = g.getGroupPhoto().replace("\\", "/");
-    System.out.println(photoPath);
-ImageIcon icon = new ImageIcon(photoPath);
-
-// Resize the image to fit the label
-Image image = icon.getImage().getScaledInstance(
-    jLabel1.getWidth(),
-    jLabel1.getHeight(),
-    Image.SCALE_SMOOTH
-);
-jLabel1.setIcon(new ImageIcon(image));
+        ImageIcon i = new ImageIcon(g.getGroupPhoto());
+         jLabel1.setIcon(i);
          jLabel3.setText(g.getName());
           jLabel4.setText(g.getDescription());
     }
@@ -62,12 +52,8 @@ jLabel1.setIcon(new ImageIcon(image));
 
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cover Photo"));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(55, 204, 255));
         jLabel3.setText("Group name");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(55, 204, 255));
         jLabel4.setText("Group description");
 
         jButton1.setText("Get posts");
@@ -96,7 +82,7 @@ jLabel1.setIcon(new ImageIcon(image));
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(205, 205, 205)
@@ -119,7 +105,7 @@ jLabel1.setIcon(new ImageIcon(image));
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -131,7 +117,7 @@ jLabel1.setIcon(new ImageIcon(image));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       GetMembersWindow window=new GetMembersWindow(g,email);
+       GetMemberForMember window=new GetMemberForMember(g, email);
        window.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 

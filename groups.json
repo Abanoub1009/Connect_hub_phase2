@@ -1,97 +1,21 @@
-[
-   {
-    "groupId":"100",
-    "name":"CCE",
-    "description":"For students",
-    "groupPhoto":"src/connect_hub/Images/cover.jpg",
-    "createdBy":"adamm",
-    "createdAt":"",
-    "members":[
+[{
+    "createdAt": "2024-12-13T17:26:25.803428",
+    "createdBy": "ann",
+    "requestMembers": [],
+    "members": [
         {
-          "memberUsername":"adamm",
-          "role":"primary_admin"
+            "role": "primary_admin",
+            "memberUsername": "ann"
         },
         {
-            "memberUsername":"tokaa",
-            "role":"admin"
-          }
-    ],
-    "posts":[
-        {
-            "caption": "hello from my post 1",
-            "photo": "src/connect_hub/Images/p.jpg",
-            "id": "P0",
-            "authorId": "U8",
-            "timestamp": "2024-12-06T22:29:42.399397500"
-        },
-        {
-            "caption": "lk",
-            "photo": "src/connect_hub/Images/p.jpg",
-            "id": "P1",
-            "authorId": "U7",
-            "timestamp": "2024-12-06T22:29:42.399397500"
+            "role": "admin",
+            "memberUsername": "bob"
         }
     ],
-    "requestPosts":[
-      
-    ],
-    "requestMembers":[
-      
-    ]
-},
-{
-    "groupId":"101",
-    "name":"Computer",
-    "description":"For Doctors",
-    "groupPhoto":"src/connect_hub/Images/cover.jpg",
-    "createdBy":"shahd",
-    "createdAt":"",
-    "members":[
-        {
-          "memberUsername":"adamm",
-          "role":"member"
-        },
-       
-          {
-            
-                "memberUsername":"shahd",
-                "role":"primary_admin"
-              
-          },
-          {
-            "memberUsername":"tokaa",
-            "role":"admin"
-          }
-
-    ],
-    "posts":[
-        
-        {
-            "caption": "lk",
-            "photo": "src/connect_hub/Images/photo.jpg",
-            "id": "P1",
-            "authorId": "U7",
-            "timestamp": "2024-12-06T22:29:42.399397500"
-        }
-    ],
-    "requestPosts":[
-        {
-            "caption": "hello from my post 1",
-            "photo": "src/connect_hub/Images/p.jpg",
-            "id": "P0",
-            "authorId": "U8",
-            "timestamp": "2024-12-06T22:29:42.399397500"
-        }
-    ],
-    "requestMembers":[
-        {
-            "memberUsername":"sheroukwaheed",
-            "role":""
-          },
-          {
-              "memberUsername":"bibo",
-              "role":""
-            }
-    ]
-   }
-]
+    "name": "test",
+    "description": "test",
+    "id": "G0",
+    "groupPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+    "requestPosts": [],
+    "posts": []
+}]

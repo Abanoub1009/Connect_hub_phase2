@@ -17,42 +17,44 @@ import javax.swing.DefaultListModel;
  * @author HP
  */
 public class OpenGroup extends javax.swing.JFrame {
-String email;
-  ArrayList<UserDetails>users;
-  ArrayList<Group>group;
-  String role;
+
+    String email;
+    ArrayList<UserDetails> users;
+    ArrayList<Group> group;
+    String role;
+
     /**
      * Creates new form OpenGroup
      */
     public OpenGroup(String email) {
         initComponents();
-        this.email=email;
+        this.email = email;
         loadGroups();
     }
 
     public OpenGroup() {
     }
-     public void loadGroups(){
-          users=new ArrayList<>();
-           group=new ArrayList<>();
-      try {
-          users = ReadUsers.readUsersFromFile("users.json");
-      } catch (IOException ex) {
-          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-        getGroupsOfUser rep=new  getGroupsOfUser(user.getUserName());
-      group=rep.getGroupsofSpecifiecUser();
-     
-        DefaultListModel<String>listModel=new DefaultListModel<>();
-         for(int i=0;i<group.size();i++){
-             String postInfo = group.get(i).getName();
-             listModel.addElement(postInfo);
-         }
-       jList1.setModel(listModel);
-    }
 
+    public void loadGroups() {
+        users = new ArrayList<>();
+        group = new ArrayList<>();
+        try {
+            users = ReadUsers.readUsersFromFile("users.json");
+        } catch (IOException ex) {
+            Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        UserDetails user = new UserDetails();
+        user = user.getSpecificUser(users, email);
+        getGroupsOfUser rep = new getGroupsOfUser(user.getUserName());
+        group = rep.getGroupsofSpecifiecUser();
+        System.out.println(group);
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (int i = 0; i < group.size(); i++) {
+            String postInfo = group.get(i).getName();
+            listModel.addElement(postInfo);
+        }
+        jList1.setModel(listModel);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -116,30 +118,30 @@ String email;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       int index=jList1.getSelectedIndex();
-       Group g=group.get(index);
-       ArrayList<Member>members=g.getMembers();
-       UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-       
-        for(Member member:members){
-            if(user.getUserName().equals(member.getMemberUsername())){
-                role=member.getRole();
+        int index = jList1.getSelectedIndex();
+        Group g = group.get(index);
+        ArrayList<Member> members = g.getMembers();
+        UserDetails user = new UserDetails();
+        user = user.getSpecificUser(users, email);
+
+        for (Member member : members) {
+            if (user.getUserName().equals(member.getMemberUsername())) {
+                role = member.getRole();
             }
         }
-        if(role.equals("primary_admin")){
-            PrimaryAdminWindow window=new PrimaryAdminWindow(g,email);
+        if (role.equals("primary_admin")) {
+            PrimaryAdminWindow window = new PrimaryAdminWindow(g, email);
             window.setVisible(true);
         }
-         if(role.equals("admin")){
-            AdminWindow window=new AdminWindow(g,email);
+        if (role.equals("admin")) {
+            AdminWindow window = new AdminWindow(g, email);
             window.setVisible(true);
-         }
-          if(role.equals("member")){
-                MemberWindow window=new MemberWindow(g,email);
+        }
+        if (role.equals("member")) {
+            MemberWindow window = new MemberWindow(g, email);
             window.setVisible(true);
-          }
-       
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

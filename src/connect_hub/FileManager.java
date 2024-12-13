@@ -111,24 +111,7 @@ public class FileManager<T> {
                     e.printStackTrace();
                 }
             }
-        }else if(object instanceof Group){
-            Group group=(Group)object;
-                Field[] fields = Group.class.getDeclaredFields();
-            for (Field field : fields) {
-                field.setAccessible(true);
-                try {
-                    Object value = field.get(group);
-                    if (field.getName().equals("id")) {
-                        jsonObject.put(field.getName(), newId);
-                    } else {
-                        jsonObject.put(field.getName(), value);
-                    }
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-            
-        }}
-        else if (object instanceof UserDetails) {
+        } else if (object instanceof UserDetails) {
             jsonObject.put("id", newId);
             UserDetails userDetails = (UserDetails) object;
 
@@ -139,6 +122,24 @@ public class FileManager<T> {
                 try {
                     Object value = field.get(userDetails);
                     jsonObject.put(field.getName(), value);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else if (object instanceof Group) {
+            Group group = (Group) object;
+
+            // Use reflection to get all fields and their values dynamically for Story
+            Field[] fields = Group.class.getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                try {
+                    Object value = field.get(group);
+                    if (field.getName().equals("id")) {
+                        jsonObject.put(field.getName(), newId);
+                    } else {
+                        jsonObject.put(field.getName(), value);
+                    }
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }

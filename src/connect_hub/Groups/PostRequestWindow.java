@@ -6,7 +6,6 @@ package connect_hub.Groups;
 
 import connect_hub.ContentCreation.Content;
 import connect_hub.ContentCreation.Post;
-import connect_hub.Groups.MemberrequestWindow;
 import connect_hub.NewsFeed.ViewPostsWindow;
 import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
@@ -54,7 +53,7 @@ GroupRepository r;
         user=user.getSpecificUser(users, email);
   
        DefaultListModel<String>listModel=new DefaultListModel<>();
-        for(int i=0;i<g.getRequestPosts().size();i++){
+        for(int i=0;i<g.getPosts().size();i++){
             
              String postInfo = "Post"+i;
             
@@ -168,7 +167,7 @@ GroupRepository r;
         else{
    
       groups=r.getAllGroups();
-      
+      System.out.println(groups);
       Post post= (Post) posts.get(index);
     
       for(int i=0;i<groups.size();i++){
@@ -190,20 +189,11 @@ GroupRepository r;
  if(index==-1){
             JOptionPane.showMessageDialog(this,"Choose Group");
         }
- else{groups=r.getAllGroups();
-    
-      Post post= (Post) posts.get(index);
-    
-      for(int i=0;i<groups.size();i++){
-          if(groups.get(i).getGroupId().equals(g.getGroupId())){
-              groups.get(i).rejectPost(post);
-              try {
-                  r.saveGroups(groups);
-              } catch (IOException ex) {
-                  Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
-              }
-          }
-      }
+        else{
+       Post p=(Post) posts.get(index);
+         g.rejectPost(p);
+           JOptionPane.showMessageDialog(this, "Post rejected successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+           openWindow();
  }
     }//GEN-LAST:event_jButton2ActionPerformed
 

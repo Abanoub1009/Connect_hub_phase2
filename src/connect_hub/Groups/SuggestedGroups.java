@@ -20,34 +20,37 @@ import javax.swing.JOptionPane;
  * @author HP
  */
 public class SuggestedGroups extends javax.swing.JFrame {
-String email;
-ArrayList<Group>groups;
-ArrayList<UserDetails>users;
+
+    private String email;
+    private ArrayList<Group> groups;
+    private ArrayList<UserDetails> users;
+    private GroupRepository groupRepository = new GroupRepository("groups.json");
+
     /**
      * Creates new form SuggestedGroups
      */
     public SuggestedGroups(String email) {
         initComponents();
-        this.email=email;
-        groups=new ArrayList<>();
+        this.email = email;
+        groups = new ArrayList<>();
         openWindow();
     }
 
     public SuggestedGroups() {
     }
-    public void openWindow(){
-        SuggestGroups suggest=new SuggestGroups(email);
-        groups=suggest.getSuggestedGroups();
-        DefaultListModel<String>listModel=new DefaultListModel<>();
-        for(int i=0;i<groups.size();i++){
-             
-             String postInfo = "Group: "+groups.get(i).getName();
-            
-        listModel.addElement(postInfo);
-         }
-         jList1.setModel(listModel);
-  }
-    
+
+    public void openWindow() {
+        SuggestGroups suggest = new SuggestGroups(email);
+        groups = suggest.getSuggestedGroups();
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (int i = 0; i < groups.size(); i++) {
+
+            String postInfo = "Group: " + groups.get(i).getName();
+
+            listModel.addElement(postInfo);
+        }
+        jList1.setModel(listModel);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,22 +114,33 @@ ArrayList<UserDetails>users;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      int index=jList1.getSelectedIndex();
-      Group g=groups.get(index);
-      users=new ArrayList<>();
-        
-      try {
-          users = ReadUsers.readUsersFromFile("users.json");
-      } catch (IOException ex) {
-          Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        UserDetails user=new UserDetails();
-        user=user.getSpecificUser(users, email);
-        Member member=new Member(user.getUserName());
-        g.addMembershipRequest(member);
-       
-        JOptionPane.showMessageDialog(this, "Request sent successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-        openWindow();
+        try {                                         
+            int index = jList1.getSelectedIndex();
+            ArrayList<Group> allGroups = groupRepository.getAllGroups();
+            users = new ArrayList<>();
+            
+            try {
+                users = ReadUsers.readUsersFromFile("users.json");
+            } catch (IOException ex) {
+                Logger.getLogger(GroupActivites.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            UserDetails user = new UserDetails();
+            user = user.getSpecificUser(users, email);
+            System.out.println("requset for" + "" + user.getUserName());
+            Member member = new Member(user.getUserName());
+            for(Group group: allGroups)
+            {
+                if(group.getGroupId().equals(groups.get(index).getGroupId()))
+                {
+                    group.addMembershipRequest(member);
+                }
+            }
+            groupRepository.saveGroups(allGroups);
+            JOptionPane.showMessageDialog(this, "Request sent successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            openWindow();
+        } catch (IOException ex) {
+            Logger.getLogger(SuggestedGroups.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

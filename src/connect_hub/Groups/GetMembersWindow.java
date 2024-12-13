@@ -23,8 +23,7 @@ public class GetMembersWindow extends javax.swing.JFrame {
     String email;
     ArrayList<Member> members;
     ArrayList<UserDetails> users;
-    ArrayList<Group> groups;
-    GroupRepository r;
+    private GroupService groupService = new GroupService();
 
     /**
      * Creates new form GetMembersWindow
@@ -33,7 +32,6 @@ public class GetMembersWindow extends javax.swing.JFrame {
         initComponents();
         this.g = g;
         this.email = email;
-        r = new GroupRepository("groups.json");
         openWindow();
     }
 
@@ -48,7 +46,7 @@ public class GetMembersWindow extends javax.swing.JFrame {
         user = user.getSpecificUser(users, email);
         members = g.getMembers();
         DefaultListModel<String> listModel = new DefaultListModel<>();
-        for (int i = 0; i < members.size(); i++) {
+        for (int i = 1; i < members.size(); i++) {
             if (!user.getUserName().equals(members.get(i).getMemberUsername())) {
                 String postInfo = "UserName:" + members.get(i).getMemberUsername() + "    Role:" + members.get(i).getRole();
 
@@ -74,6 +72,7 @@ public class GetMembersWindow extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -90,6 +89,13 @@ public class GetMembersWindow extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Make Admin");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,10 +107,12 @@ public class GetMembersWindow extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,9 +122,11 @@ public class GetMembersWindow extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,19 +154,7 @@ public class GetMembersWindow extends javax.swing.JFrame {
                     if (m.getRole().equals("primary_admin")) {
                         JOptionPane.showMessageDialog(this, "Can't remove this member", "Error", JOptionPane.ERROR_MESSAGE);
                     } else {
-                        groups = new ArrayList<>();
-                        groups = r.getAllGroups();
-
-                        for (int i = 0; i < groups.size(); i++) {
-                            if (groups.get(i).getGroupId().equals(g.getGroupId())) {
-                                groups.get(i).removeMember(m);
-                                try {
-                                    r.saveGroups(groups);
-                                } catch (IOException ex) {
-                                    Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
-                                }
-                            }
-                        }
+                        g.removeMember(m);
                         JOptionPane.showMessageDialog(this, "Member removed successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                         openWindow();
                     }
@@ -168,6 +166,30 @@ public class GetMembersWindow extends javax.swing.JFrame {
         openWindow();
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int index = jList1.getSelectedIndex();
+        Member m = members.get(index+1);
+        System.out.println(m.getMemberUsername());
+        for(Member member : g.getMembers())
+                    {
+                        
+                        if(member.getMemberUsername().equals(m.getMemberUsername()))
+                        {
+                            try {
+                                groupService.promoteToAdmin(g.getName(), member.getMemberUsername());
+                                System.out.println(member.getRole());
+                                System.out.println("Done");
+                                break;
+                            } catch (Exception ex) {
+                                Logger.getLogger(GetMembersWindow.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                    }
+        
+        JOptionPane.showMessageDialog(this, "Member Permoted Successfuly", "Success", JOptionPane.INFORMATION_MESSAGE);
+        openWindow();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +228,7 @@ public class GetMembersWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
