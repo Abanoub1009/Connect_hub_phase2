@@ -3,11 +3,15 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <name>Connect_Hub</name>
 =======
             <name>Connect_Hub_phase6</name>
 >>>>>>> Stashed changes
+=======
+            <name>Connect_Hub_phase2</name>
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>

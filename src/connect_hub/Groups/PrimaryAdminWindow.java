@@ -4,12 +4,16 @@
  */
 package connect_hub.Groups;
 
+<<<<<<< HEAD
 import connect_hub.NewsFeed.gui;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+=======
+import javax.swing.ImageIcon;
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
 /**
  *
@@ -19,7 +23,10 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
 
     Group g;
     String email;
+<<<<<<< HEAD
     GroupRepository r;
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
     /**
      * Creates new form PrimaryAdminWindow
@@ -28,7 +35,10 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
         initComponents();
         this.g = g;
         this.email = email;
+<<<<<<< HEAD
         r=new GroupRepository("groups.json");
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         openWindow();
     }
 
@@ -61,7 +71,11 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cover Photo"));
 
@@ -183,6 +197,7 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+<<<<<<< HEAD
         try {
             r.deletGroup(g);
         } catch (Exception ex) {
@@ -198,6 +213,13 @@ public class PrimaryAdminWindow extends javax.swing.JFrame {
       AddPostWindow window=new AddPostWindow(email,g);
       window.setVisible(true);
       
+=======
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

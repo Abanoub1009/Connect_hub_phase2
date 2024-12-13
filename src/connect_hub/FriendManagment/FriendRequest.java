@@ -36,8 +36,10 @@ public class FriendRequest {
     public void sendRequest(UserDetails sender,UserDetails reciver, ArrayList<UserDetails> users) throws IOException{
         Friends friendSender=new Friends(sender.getUserName(),sender.getStatus());
         System.out.println(friendSender);
-        
+      
         Friends friendReciver=new Friends(reciver.getUserName(),reciver.getStatus());
+          sender.addSentFriend(friendReciver);
+            System.out.println(sender.getSent());
         System.out.println(friendReciver);
           reciver.addRequestFriend(friendSender);
           System.out.println(reciver.getRequest());

@@ -23,7 +23,11 @@ public class MemberrequestWindow extends javax.swing.JFrame {
     String email;
     ArrayList<Member> members;
     ArrayList<UserDetails> users;
+<<<<<<< HEAD
   
+=======
+    ArrayList<Group> groups;
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     GroupRepository r;
 
     /**
@@ -34,7 +38,10 @@ public class MemberrequestWindow extends javax.swing.JFrame {
         this.g = g;
         this.email = email;
         r = new GroupRepository("groups.json");
+<<<<<<< HEAD
        
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         openWindow();
     }
 
@@ -81,7 +88,11 @@ public class MemberrequestWindow extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(55, 204, 255));
@@ -141,8 +152,13 @@ public class MemberrequestWindow extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             int index = jList1.getSelectedIndex();
+<<<<<<< HEAD
            
              ArrayList<Group> groups= r.getAllGroups();
+=======
+            groups = new ArrayList<>();
+            groups = r.getAllGroups();
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
             Member m = members.get(index);
             Member tmp = new Member();
             for (Group group : groups) {
@@ -155,7 +171,10 @@ public class MemberrequestWindow extends javax.swing.JFrame {
                         }
                     }
                     group.approveMembershipRequest(tmp);
+<<<<<<< HEAD
                    
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
                 }
             }
             r.saveGroups(groups);
@@ -168,7 +187,12 @@ public class MemberrequestWindow extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int index = jList1.getSelectedIndex();
+<<<<<<< HEAD
         ArrayList<Group> groups= r.getAllGroups();
+=======
+        groups = new ArrayList<>();
+        groups = r.getAllGroups();
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         Member m = members.get(index);
         Member tmp = new Member();
         for (Group group : groups) {

@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package connect_hub.NewsFeed;
-
+import connect_hub.Groups.OpenGroup;
 import connect_hub.ContentCreation.Content;
 import connect_hub.ContentCreation.Story;
 import connect_hub.ContentCreation.addPost;
 import connect_hub.ContentCreation.addStory;
+import connect_hub.Groups.AddGroupFrame;
+import connect_hub.Groups.SuggestGroups;
+import connect_hub.Groups.SuggestedGroups;
 import connect_hub.ProfileManagment.EditProfileWindow;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -46,13 +49,19 @@ public class gui extends javax.swing.JFrame {
         Profile = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,8 +105,11 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         jButton3.setText("List of groups");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +138,10 @@ public class gui extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,14 +160,19 @@ public class gui extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(300, 300, 300)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4)
+                            .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton3)
+                        .addGap(63, 63, 63)
                         .addComponent(jButton1)
                         .addGap(59, 59, 59)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Profile, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +193,10 @@ public class gui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
                 .addGap(27, 27, 27))
         );
 
@@ -200,8 +223,11 @@ public class gui extends javax.swing.JFrame {
         new addPost(email).setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        OpenGroup window=new OpenGroup(email);
        window.setVisible(true);
@@ -221,7 +247,10 @@ public class gui extends javax.swing.JFrame {
         new Search(email).setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     /**
      * @param args the command line arguments
      */
@@ -261,13 +290,19 @@ public class gui extends javax.swing.JFrame {
     private javax.swing.JButton Profile;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton viewPosts;
     private javax.swing.JButton viewStories;

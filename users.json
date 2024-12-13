@@ -8,6 +8,7 @@
         "bio": "hello",
         "dateOfBirth": "10-9-2004",
         "userName": "abanoub",
+        "sent": [],
         "posts": [],
         "friends": [],
         "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
@@ -23,6 +24,7 @@
         "bio": "Update your bio ",
         "dateOfBirth": "10-9-2004",
         "userName": "bibo",
+        "sent": [],
         "posts": [{
             "Content": "hello from my post 1",
             "Image": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
@@ -37,13 +39,20 @@
         "status": "Offline"
     },
     {
-        "request": [],
+        "request": [{
+            "FriendUserName": "tokaa",
+            "status": "Offline"
+        }],
         "coverPhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
         "bio": "new",
         "dateOfBirth": "11-10-2023",
         "userName": "shahd",
+        "sent": [],
         "posts": [],
-        "friends": [],
+        "friends": [{
+            "FriendUserName": "adamm",
+            "status": "Offline"
+        }],
         "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
         "profilePhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\WIN_20241021_13_52_02_Pro.jpg",
         "blocked": [],
@@ -57,6 +66,7 @@
         "bio": "Update your bio ",
         "dateOfBirth": "1-1-2002",
         "userName": "sheroukwaheed",
+        "sent": [],
         "posts": [],
         "friends": [],
         "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
@@ -72,6 +82,7 @@
         "bio": "Update your bio ",
         "dateOfBirth": "1-1-2001",
         "userName": "sheroukwah",
+        "sent": [],
         "posts": [
             {
                 "Content": "lk",
@@ -93,7 +104,7 @@
         }],
         "id": "U4",
         "email": "sherouk@gmail.com",
-        "status": "Online"
+        "status": "Offline"
     },
     {
         "request": [],
@@ -101,6 +112,7 @@
         "bio": "Update your bio ",
         "dateOfBirth": "1-1-2001",
         "userName": "sama mohamed",
+        "sent": [],
         "posts": [],
         "friends": [{
             "FriendUserName": "sheroukwah",
@@ -119,6 +131,7 @@
         "bio": "Update your bio ",
         "dateOfBirth": "10-9-2000",
         "userName": "ann",
+        "sent": [],
         "posts": [],
         "friends": [],
         "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
@@ -127,15 +140,25 @@
         "id": "U6",
         "email": "ann@gmail.com",
         "status": "Online"
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
     },
     {
         "request": [],
+=======
+    },
+    {
+        "request": [{
+            "FriendUserName": "tokaa",
+            "status": "Offline"
+        }],
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         "coverPhoto": "src/connect_hub/Images/cover.jpg",
         "bio": "Update your bio ",
         "dateOfBirth": "11-8-2021",
         "userName": "adamm",
+<<<<<<< HEAD
         "sent": [{
             "FriendUserName": "abanoub",
             "status": "Offline"
@@ -154,6 +177,17 @@
                 "status": "Offline"
             }
         ],
+=======
+        "sent": [],
+        "posts": [],
+        "friends": [{
+            "FriendUserName": "shahd",
+            "status": "Offline"
+        }],
+        "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         "id": "U7",
         "email": "adam@gmail.com",
         "status": "Offline"
@@ -240,6 +274,7 @@
         "id": "U12",
         "email": "1234@gmail.com",
         "status": "Offline"
+<<<<<<< HEAD
     },
     {
         "request": [],
@@ -257,5 +292,7 @@
         "email": "mohamed@gmail.com",
         "status": "Offline"
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     }
 ]

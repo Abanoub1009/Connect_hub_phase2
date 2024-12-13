@@ -6,7 +6,10 @@ package connect_hub.Groups;
 
 import connect_hub.ContentCreation.Content;
 import connect_hub.ContentCreation.Post;
+<<<<<<< HEAD
 import connect_hub.Groups.MemberrequestWindow;
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 import connect_hub.NewsFeed.ViewPostsWindow;
 import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
@@ -54,7 +57,11 @@ GroupRepository r;
         user=user.getSpecificUser(users, email);
   
        DefaultListModel<String>listModel=new DefaultListModel<>();
+<<<<<<< HEAD
         for(int i=0;i<g.getRequestPosts().size();i++){
+=======
+        for(int i=0;i<g.getPosts().size();i++){
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
             
              String postInfo = "Post"+i;
             
@@ -170,6 +177,7 @@ GroupRepository r;
       groups=r.getAllGroups();
       System.out.println(groups);
       Post post= (Post) posts.get(index);
+<<<<<<< HEAD
       Post tmp=new Post();
       for(Group group:groups){
           if(group.getGroupId().equals(g.getGroupId())){
@@ -194,15 +202,34 @@ GroupRepository r;
             JOptionPane.showMessageDialog(this, "post added successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
             openWindow();
         
+=======
+    
+      for(int i=0;i<groups.size();i++){
+          if(groups.get(i).getGroupId().equals(g.getGroupId())){
+              groups.get(i).approvePost(post);
+              try {
+                  r.saveGroups(groups);
+              } catch (IOException ex) {
+                  Logger.getLogger(MemberrequestWindow.class.getName()).log(Level.SEVERE, null, ex);
+              }
+          }
+      }
+    
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
  }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+<<<<<<< HEAD
       int index=jList1.getSelectedIndex();
+=======
+          int index=jList1.getSelectedIndex();
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
  if(index==-1){
             JOptionPane.showMessageDialog(this,"Choose Group");
         }
         else{
+<<<<<<< HEAD
    
       groups=r.getAllGroups();
       System.out.println(groups);
@@ -230,6 +257,12 @@ GroupRepository r;
               
               openWindow();
         
+=======
+       Post p=(Post) posts.get(index);
+         g.rejectPost(p);
+           JOptionPane.showMessageDialog(this, "Post rejected successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+           openWindow();
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
  }
     }//GEN-LAST:event_jButton2ActionPerformed
 

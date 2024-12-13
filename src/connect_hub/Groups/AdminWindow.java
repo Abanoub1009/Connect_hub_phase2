@@ -49,7 +49,11 @@ public class AdminWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cover Photo"));
 
@@ -61,11 +65,14 @@ public class AdminWindow extends javax.swing.JFrame {
         });
 
         jButton2.setText("Add post");
+<<<<<<< HEAD
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         jButton3.setText("Get members");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -165,11 +172,14 @@ public class AdminWindow extends javax.swing.JFrame {
        window.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+<<<<<<< HEAD
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        AddPostWindow window=new AddPostWindow(email,g);
       window.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     /**
      * @param args the command line arguments
      */

@@ -2,7 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
+<<<<<<< HEAD
     <Property name="defaultCloseOperation" type="int" value="2"/>
+=======
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -103,9 +107,12 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Add posts"/>
       </Properties>
+<<<<<<< HEAD
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>

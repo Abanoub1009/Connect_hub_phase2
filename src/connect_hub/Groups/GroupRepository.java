@@ -32,12 +32,19 @@ public class GroupRepository {
 
     // Save all groups to file
     public void saveGroups(ArrayList<Group> groups) throws IOException {
+<<<<<<< HEAD
     System.out.println("writing2");
     groupManager.deleteJsonFile();
 
     if (groups.isEmpty()) {
         System.out.println("No groups to write");
         return;
+=======
+        groupManager.deleteJsonFile();
+        for (Group group : groups) {
+            groupManager.writeToJson(group);
+        }
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     }
 
     for (Group group : groups) {
@@ -64,6 +71,7 @@ public class GroupRepository {
             String memberUsername = memberObject.getString("memberUsername");
             String role = memberObject.getString("role");
             Member member = new Member(memberUsername);
+            System.out.println(member);
             member.setRole(role);
             members.add(member);
         }

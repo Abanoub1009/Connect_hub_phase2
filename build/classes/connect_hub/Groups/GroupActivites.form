@@ -9,7 +9,11 @@
     </Component>
   </NonVisualComponents>
   <Properties>
+<<<<<<< HEAD
     <Property name="defaultCloseOperation" type="int" value="2"/>
+=======
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>

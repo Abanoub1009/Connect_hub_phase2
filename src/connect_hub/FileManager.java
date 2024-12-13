@@ -131,6 +131,7 @@ public class FileManager<T> {
             Group group = (Group) object;
 
             // Use reflection to get all fields and their values dynamically for Story
+<<<<<<< HEAD
            Field[] fields = Group.class.getDeclaredFields();
 for (Field field : fields) {
     field.setAccessible(true);
@@ -188,6 +189,22 @@ for (Field field : fields) {
     }
 }
 
+=======
+            Field[] fields = Group.class.getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                try {
+                    Object value = field.get(group);
+                    if (field.getName().equals("id")) {
+                        jsonObject.put(field.getName(), newId);
+                    } else {
+                        jsonObject.put(field.getName(), value);
+                    }
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         }
 
         // Add the new object to the JSON array

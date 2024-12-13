@@ -28,17 +28,23 @@ public class UserDetails {
     private String coverPhoto;
     private ArrayList<Friends> friends;
     private ArrayList<Post> posts;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     private ArrayList<Friends>request;
     private ArrayList<Friends>blocked;
     public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts,ArrayList<Friends> request,ArrayList<Friends> blocked) {
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     private ArrayList<Friends> request;
     private ArrayList<Friends> blocked;
     private ArrayList<Friends> sent;
 
     public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts, ArrayList<Friends> request, ArrayList<Friends> blocked, ArrayList<Friends> sent) {
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
         this.userId = userId;
         this.email = email;
         this.userName = userName;
@@ -52,6 +58,7 @@ public class UserDetails {
         this.coverPhoto = "src/connect_hub/Images/cover.jpg";
         this.friends = (friends == null) ? new ArrayList<>() : friends;
         this.posts = (posts == null) ? new ArrayList<>() : posts;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
          this.request = (request == null) ? new ArrayList<>() : request;
         this.blocked = (blocked == null) ? new ArrayList<>() :blocked;
@@ -60,6 +67,11 @@ public class UserDetails {
         this.blocked = (blocked == null) ? new ArrayList<>() : blocked;
         this.sent = (sent == null) ? new ArrayList<>() : sent;
 >>>>>>> Stashed changes
+=======
+        this.request = (request == null) ? new ArrayList<>() : request;
+        this.blocked = (blocked == null) ? new ArrayList<>() : blocked;
+        this.sent = (sent == null) ? new ArrayList<>() : sent;
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     }
 
 //    public UserDetails() {
@@ -77,6 +89,7 @@ public class UserDetails {
         this.coverPhoto = "";
         this.friends = new ArrayList<>();
         this.posts = new ArrayList<>();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         this.blocked=new ArrayList<>();
         this.request=new ArrayList<>();
@@ -85,6 +98,11 @@ public class UserDetails {
         this.request = new ArrayList<>();
         this.sent = new ArrayList<>();
 >>>>>>> Stashed changes
+=======
+        this.blocked = new ArrayList<>();
+        this.request = new ArrayList<>();
+        this.sent = new ArrayList<>();
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
     }
 
     public String getBio() {
@@ -296,6 +314,15 @@ public class UserDetails {
     }
 >>>>>>> Stashed changes
 
+    public UserDetails getSpecificUser3(ArrayList<UserDetails> users, String id) {
+        for (UserDetails user : users) {
+            if (user.getUserId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static String getStatus(String userId) {
         try {
             // Read the JSON file into a string
@@ -362,7 +389,10 @@ public class UserDetails {
     public void setSent(ArrayList<connect_hub.UserManagement.Friends> sent) {
         this.sent = sent;
     }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
     public void addRequestFriend(Friends friendSender) {
         request.add(friendSender);

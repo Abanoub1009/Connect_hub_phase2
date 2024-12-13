@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "createdAt": "2024-12-13T17:26:25.803428",
@@ -74,3 +75,26 @@
         "posts": []
     }
 ]
+=======
+[{
+    "createdAt": "2024-12-13T17:26:25.803428",
+    "createdBy": "ann",
+    "requestMembers": [],
+    "members": [
+        {
+            "role": "primary_admin",
+            "memberUsername": "ann"
+        },
+        {
+            "role": "admin",
+            "memberUsername": "bob"
+        }
+    ],
+    "name": "test",
+    "description": "test",
+    "id": "G0",
+    "groupPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+    "requestPosts": [],
+    "posts": []
+}]
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a

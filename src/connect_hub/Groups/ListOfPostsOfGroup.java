@@ -51,11 +51,19 @@ Group g;
          DefaultListModel<String>listModel=new DefaultListModel<>();
          for(int i=0;i<posts.size();i++){
                 user=user.getSpecificUser3(users, posts.get(i).getAuthorId());
+<<<<<<< HEAD
                 
              String postInfo = "post"+i+" added by "+user.getUserName();
             
         listModel.addElement(postInfo);
          }
+=======
+                if(!user.equals(user2)){
+             String postInfo = "post"+i+" added by "+user.getUserName();
+            
+        listModel.addElement(postInfo);
+         }}
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
        jList1.setModel(listModel);
     }
 
@@ -73,7 +81,11 @@ Group g;
         jList1 = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
 
+<<<<<<< HEAD
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(55, 204, 255));

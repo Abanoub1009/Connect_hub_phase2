@@ -83,13 +83,17 @@ public class Post implements Content {
         }
         return authorName;
     }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
     @Override
     public String toString() {
         return "Post{" + "id=" + id + ", authorId=" + authorId + ", caption=" + caption + ", photo=" + photo + ", timestamp=" + timestamp + '}';
     }
+<<<<<<< HEAD
     @Override
 public boolean equals(Object obj) {
     if (this == obj) return true;
@@ -104,5 +108,8 @@ public int hashCode() {
 }
     
 >>>>>>> Stashed changes
+=======
+    
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 }
 

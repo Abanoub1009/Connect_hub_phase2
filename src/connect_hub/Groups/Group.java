@@ -140,6 +140,10 @@ public class Group {
         requestPosts.remove(post);
         posts.add(post);
     }
+    public void rejectPost(Post post) {
+        requestPosts.remove(post);
+       
+    }
 
     // Methods to handle membership requests
     public void addMembershipRequest(Member member) {
@@ -154,13 +158,17 @@ public class Group {
     public void rejectMembershipRequest(Member member) {
         requestMembers.remove(member);
     }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 
     @Override
     public String toString() {
         return "Group{" + "groupId=" + id + ", name=" + name + ", description=" + description + ", groupPhoto=" + groupPhoto + ", createdBy=" + createdBy + ", createdAt=" + createdAt + ", members=" + members + ", posts=" + posts + ", requestPosts=" + requestPosts + ", requestMembers=" + requestMembers + '}';
     }
+<<<<<<< HEAD
     @Override
 public boolean equals(Object obj) {
     if (this == obj) return true;
@@ -176,5 +184,8 @@ public int hashCode() {
 
     
 >>>>>>> Stashed changes
+=======
+    
+>>>>>>> 5bc3f581823a999bf7e723b97efa6986b9b6402a
 }
 

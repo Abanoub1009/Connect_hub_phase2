@@ -18,7 +18,7 @@ public class Member {
     }
 
     Member() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      
     }
 
     public String getMemberUsername() {
@@ -35,6 +35,11 @@ public class Member {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" + "memberUsername=" + memberUsername + ", role=" + role + '}';
     }
     
 }
