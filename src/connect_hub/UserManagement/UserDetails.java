@@ -32,7 +32,8 @@ public class UserDetails {
     private ArrayList<Post> posts;
     private ArrayList<Friends>request;
     private ArrayList<Friends>blocked;
-    public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts,ArrayList<Friends> request,ArrayList<Friends> blocked) {
+    private ArrayList<Friends>sent;
+    public UserDetails(String userId, String email, String userName, String password, String dateOfBirth, String status, ArrayList<Friends> friends, ArrayList<Post> posts,ArrayList<Friends> request,ArrayList<Friends> blocked,ArrayList<Friends>sent) {
         this.userId = userId;
         this.email = email;
         this.userName = userName;
@@ -48,6 +49,7 @@ public class UserDetails {
         this.posts = (posts == null) ? new ArrayList<>() : posts;
          this.request = (request == null) ? new ArrayList<>() : request;
         this.blocked = (blocked == null) ? new ArrayList<>() :blocked;
+        this.sent = (sent == null) ? new ArrayList<>() :sent;
     }
 
 //    public UserDetails() {
@@ -67,6 +69,7 @@ public class UserDetails {
         this.posts = new ArrayList<>();
         this.blocked=new ArrayList<>();
         this.request=new ArrayList<>();
+        this.sent=new ArrayList<>();
     }
 
     public String getBio() {
@@ -264,6 +267,14 @@ public class UserDetails {
         }
         return null;
     }
+    public UserDetails getSpecificUser3(ArrayList<UserDetails> users, String id) {
+        for (UserDetails user : users) {
+            if (user.getUserId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
+    }
 
     public static String getStatus(String userId) {
         try {
@@ -315,6 +326,17 @@ public class UserDetails {
     }
     public void addBlockedFriend(Friends friend){
         blocked.add(friend);
+    }
+     public void addSentFriend(Friends friend){
+        sent.add(friend);
+    }
+
+    public ArrayList<connect_hub.UserManagement.Friends> getSent() {
+        return sent;
+    }
+
+    public void setSent(ArrayList<connect_hub.UserManagement.Friends> sent) {
+        this.sent = sent;
     }
 
 

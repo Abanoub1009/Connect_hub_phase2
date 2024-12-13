@@ -1,0 +1,93 @@
+[
+   {
+    "groupId":"100",
+    "name":"CCE",
+    "description":"For students",
+    "groupPhoto":"",
+    "createdBy":"adamm",
+    "createdAt":"",
+    "members":[
+        {
+          "memberUsername":"adamm",
+          "role":"primary_admin"
+        },
+        {
+            "memberUsername":"tokaa",
+            "role":"admin"
+          }
+    ],
+    "posts":[
+        {
+            "caption": "hello from my post 1",
+            "photo": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+            "id": "P0",
+            "authorId": "U8",
+            "timestamp": "2024-12-06T22:29:42.399397500"
+        },
+        {
+            "caption": "lk",
+            "photo": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
+            "id": "P1",
+            "authorId": "U7",
+            "timestamp": "2024-12-06T22:29:42.399397500"
+        }
+    ],
+    "requestPosts":[
+      
+    ],
+    "requestMembers":[
+      
+    ]
+},
+{
+    "groupId":"101",
+    "name":"Computer",
+    "description":"For Doctors",
+    "groupPhoto":"",
+    "createdBy":"shahd",
+    "createdAt":"",
+    "members":[
+        {
+          "memberUsername":"adamm",
+          "role":"member"
+        },
+      
+          {
+            
+                "memberUsername":"shahd",
+                "role":"primary_admin"
+              
+          }
+
+    ],
+    "posts":[
+        
+        {
+            "caption": "lk",
+            "photo": "C:\\Users\\shero\\Pictures\\Screenshots\\Screenshot (35).png",
+            "id": "P1",
+            "authorId": "U7",
+            "timestamp": "2024-12-06T22:29:42.399397500"
+        }
+    ],
+    "requestPosts":[
+        {
+            "caption": "hello from my post 1",
+            "photo": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+            "id": "P0",
+            "authorId": "U8",
+            "timestamp": "2024-12-06T22:29:42.399397500"
+        }
+    ],
+    "requestMembers":[
+        {
+            "memberUsername":"sheroukwaheed",
+            "role":""
+          },
+          {
+              "memberUsername":"bibo",
+              "role":""
+            }
+    ]
+   }
+]

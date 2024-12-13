@@ -130,6 +130,7 @@ public void loadAllSuggestedFriends() throws NoSuchAlgorithmException, IOExcepti
           FriendRequest request=new FriendRequest(userSender,userReciver,userList);
      try {
          request.sendRequest(userSender, userReciver,userList);
+        
      } catch (IOException ex) {
          Logger.getLogger(FriendSuggestionWindow.class.getName()).log(Level.SEVERE, null, ex);
      }

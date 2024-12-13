@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class LogIn extends UserDetails {
 
     public LogIn(String email, String password) throws IOException {
-        super(null, email, null, password, null, "Online",null,null,null,null);
+        super(null, email, null, password, null, "Online",null,null,null,null,null);
     }
 
     public String checkLoginCredentials(String email, String password) throws IOException {
