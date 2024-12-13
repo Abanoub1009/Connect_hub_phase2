@@ -1,0 +1,76 @@
+[
+    {
+        "createdAt": "2024-12-13T17:26:25.803428",
+        "createdBy": "ann",
+        "requestMembers": [],
+        "members": [
+            {
+                "role": "primary_admin",
+                "memberUsername": "ann"
+            },
+            {
+                "role": "admin",
+                "memberUsername": "bob"
+            },
+            {
+                "role": "admin",
+                "memberUsername": "tokaa"
+            }
+        ],
+        "name": "test",
+        "description": "test",
+        "id": "G0",
+        "groupPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+        "requestPosts": [
+            {
+                "caption": "jjdjjdd",
+                "photo": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
+                "id": "p01",
+                "authorId": "U6",
+                "timestamp": "2024-12-13T23:09:31.537858300"
+            },
+            {
+                "caption": "dsdsdsdsds",
+                "photo": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
+                "id": "p02",
+                "authorId": "U6",
+                "timestamp": "2024-12-13T23:09:31.537858300"
+            },
+            {
+                "caption": "awddadsads",
+                "photo": "C:\\Users\\HP\\Pictures\\Camera Roll\\WhatsApp Image 2022-03-16 at 10.37.06 PM.jpeg",
+                "id": "p03",
+                "authorId": "U6",
+                "timestamp": "2024-12-13T23:09:31.548701100"
+            }
+        ],
+        "posts": [{
+            "caption": "hiiiiiiiiiiii",
+            "photo": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
+            "id": "p00",
+            "authorId": "U6",
+            "timestamp": "2024-12-13T23:09:31.537858300"
+        }]
+    },
+    {
+        "createdAt": "2024-12-13T19:53:02.0398909",
+        "createdBy": "ann",
+        "requestMembers": [],
+        "members": [
+            {
+                "role": "primary_admin",
+                "memberUsername": "ann"
+            },
+            {
+                "role": "member",
+                "memberUsername": "shahd"
+            }
+        ],
+        "name": "hiiiii",
+        "description": "sky",
+        "id": "G1",
+        "groupPhoto": "C:\\Users\\HP\\Pictures\\Camera Roll\\Saved Pictures\\beautiful-images-10.jpg",
+        "requestPosts": [],
+        "posts": []
+    }
+]

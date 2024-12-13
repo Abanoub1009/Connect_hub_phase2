@@ -1,6 +1,9 @@
 [
     {
-        "request": [],
+        "request": [{
+            "FriendUserName": "adamm",
+            "status": "Offline"
+        }],
         "coverPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
         "bio": "hello",
         "dateOfBirth": "10-9-2004",
@@ -124,5 +127,135 @@
         "id": "U6",
         "email": "ann@gmail.com",
         "status": "Online"
+<<<<<<< Updated upstream
+=======
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "11-8-2021",
+        "userName": "adamm",
+        "sent": [{
+            "FriendUserName": "abanoub",
+            "status": "Offline"
+        }],
+        "posts": [],
+        "friends": [],
+        "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [
+            {
+                "FriendUserName": "shahd",
+                "status": "Offline"
+            },
+            {
+                "FriendUserName": "tokaa",
+                "status": "Offline"
+            }
+        ],
+        "id": "U7",
+        "email": "adam@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "11-8-2023",
+        "userName": "tokaa",
+        "sent": [{
+            "FriendUserName": "shahd",
+            "status": "Offline"
+        }],
+        "posts": [],
+        "friends": [],
+        "password": "1a5376ad727d65213a79f3108541cf95012969a0d3064f108b5dd6e7f8c19b89",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U8",
+        "email": "toka@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "11-11-1990",
+        "userName": "test",
+        "sent": [],
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U9",
+        "email": "test@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "10-9-2004",
+        "userName": "bob",
+        "sent": [],
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U10",
+        "email": "bob@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "10-9-2004",
+        "userName": "abanoub",
+        "sent": [],
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U11",
+        "email": "abanoubSoliman@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "10-9-2004",
+        "userName": "test_the_search",
+        "sent": [],
+        "posts": [],
+        "friends": [],
+        "password": "15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225",
+        "profilePhoto": "F:\\425751823_3588125651452582_287507153334925702_n.jpg",
+        "blocked": [],
+        "id": "U12",
+        "email": "1234@gmail.com",
+        "status": "Offline"
+    },
+    {
+        "request": [],
+        "coverPhoto": "src/connect_hub/Images/cover.jpg",
+        "bio": "Update your bio ",
+        "dateOfBirth": "11-8-2023",
+        "userName": "mohamed",
+        "sent": [],
+        "posts": [],
+        "friends": [],
+        "password": "bb421fa35db885ce507b0ef5c3f23cb09c62eb378fae3641c165bdf4c0272949",
+        "profilePhoto": "src/connect_hub/Images/pp.png",
+        "blocked": [],
+        "id": "U13",
+        "email": "mohamed@gmail.com",
+        "status": "Offline"
+>>>>>>> Stashed changes
     }
 ]

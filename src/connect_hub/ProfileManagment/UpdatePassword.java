@@ -1,6 +1,8 @@
 package connect_hub.ProfileManagment;
 
+import connect_hub.UserManagement.ReadUsers;
 import connect_hub.UserManagement.UserDetails;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -18,7 +20,8 @@ public class UpdatePassword {
     }
 
 
-    public void changePassword(String password, String id) throws NoSuchAlgorithmException {
+    public void changePassword(String password, String id) throws NoSuchAlgorithmException, IOException {
+        users= ReadUsers.readUsersFromFile("users.json");
         for (UserDetails user : users) {
             if (user.getUserId().equals(id)) {
                 if (validatePassword(password)) {

@@ -32,14 +32,22 @@ public class GroupRepository {
 
     // Save all groups to file
     public void saveGroups(ArrayList<Group> groups) throws IOException {
+    System.out.println("writing2");
+    groupManager.deleteJsonFile();
 
-        for (Group group : groups) {
-            groupManager.writeToJson(group);
-        }
+    if (groups.isEmpty()) {
+        System.out.println("No groups to write");
+        return;
     }
 
+    for (Group group : groups) {
+        System.out.println("writing");
+        groupManager.writeToJson(group);
+    }
+}
+
     private Group parseGroup(JSONObject jsonObject) {
-        String id = jsonObject.getString("groupId");
+        String id = jsonObject.getString("id");
         String name = jsonObject.getString("name");
         String createdBy = jsonObject.getString("createdBy");
         String createdAt = jsonObject.getString("createdAt");
@@ -76,7 +84,7 @@ public class GroupRepository {
         JSONArray requestPostsArray = jsonObject.getJSONArray("requestPosts");
         ArrayList<Content> requestPosts = new ArrayList<>();
         for (int i = 0; i < requestPostsArray.length(); i++) {
-            JSONObject postObject = postsArray.getJSONObject(i);
+            JSONObject postObject = requestPostsArray.getJSONObject(i);
             String contentId = postObject.getString("id");
             String authorId = postObject.getString("authorId");
             String caption = postObject.getString("caption");
@@ -88,7 +96,7 @@ public class GroupRepository {
         JSONArray requestMemberArray = jsonObject.getJSONArray("requestMembers");
         ArrayList<Member> requestMembers = new ArrayList<>();
         for (int i = 0; i < requestMemberArray.length(); i++) {
-            JSONObject memberObject = membersArray.getJSONObject(i);
+            JSONObject memberObject = requestMemberArray.getJSONObject(i);
             String memberUsername = memberObject.getString("memberUsername");
             String role = memberObject.getString("role");
             Member member = new Member(memberUsername);

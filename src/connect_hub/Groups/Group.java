@@ -5,7 +5,7 @@ import connect_hub.ContentCreation.Post;
 import java.util.ArrayList;
 
 public class Group {
-    private String groupId;
+    private String id;
     private String name;
     private String description;
     private String groupPhoto;
@@ -18,7 +18,7 @@ public class Group {
 
     // Constructor
     public Group(String groupId, String name,String createdBy, String createdAt) {
-        this.groupId = groupId;
+        this.id = groupId;
         this.name = name;
         this.description = "";
         this.groupPhoto = "src/connect_hub/Images/pp.png";
@@ -36,11 +36,11 @@ public class Group {
 
     // Getters and Setters
     public String getGroupId() {
-        return groupId;
+        return id;
     }
 
     public void setGroupId(String groupId) {
-        this.groupId = groupId;
+        this.id = groupId;
     }
 
     public String getName() {
@@ -154,5 +154,27 @@ public class Group {
     public void rejectMembershipRequest(Member member) {
         requestMembers.remove(member);
     }
+<<<<<<< Updated upstream
+=======
+
+    @Override
+    public String toString() {
+        return "Group{" + "groupId=" + id + ", name=" + name + ", description=" + description + ", groupPhoto=" + groupPhoto + ", createdBy=" + createdBy + ", createdAt=" + createdAt + ", members=" + members + ", posts=" + posts + ", requestPosts=" + requestPosts + ", requestMembers=" + requestMembers + '}';
+    }
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Group group = (Group) obj;
+    return id.equals(group.id); // Assuming `id` is unique
+}
+
+@Override
+public int hashCode() {
+    return id.hashCode(); // Use the unique `id` for hashCode
+}
+
+    
+>>>>>>> Stashed changes
 }
 

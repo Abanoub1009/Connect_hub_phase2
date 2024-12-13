@@ -2,6 +2,43 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/viewFrinedProfile.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/PrimaryAdminWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/FileManager.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/UserManagement/UserDetails.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/getListOfFriendsForFreind.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/viewGroup.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/MemberWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GroupActivites.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/OpenGroup.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/AddGroupFrame.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GetGroupActivities.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/ProfileManagment/getListOfFriendsWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/Search.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GroupService.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GroupController.java</file>
+            <file>file:/F:/New%20folder/test/users.json</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/getGroupsOfUser.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/SuggestGroups.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GetMembersWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GetMemberForMember.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/ProfileManagment/EditProfileWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/Group.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/UserManagement/Friends.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/PermissionService.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GetMemberForAdmin.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/UserManagement/ReadUsers.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/gui.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/NewsFeed/getMembersForFriend.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/AdminWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/MemberrequestWindow.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/ProfileManagment/FriendSuggestionWindow.form</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/GroupRepository.java</file>
+            <file>file:/F:/New%20folder/test/groups.json</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/ProfileManagment/GetListOfPosts.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/ListOfPostsOfGroup.java</file>
+            <file>file:/F:/New%20folder/test/src/connect_hub/Groups/SuggestedGroups.java</file>
+        </group>
     </open-files>
 </project-private>

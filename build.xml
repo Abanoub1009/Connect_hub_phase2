@@ -7,8 +7,13 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+<<<<<<< Updated upstream
 <project name="Connect_Hub" default="default" basedir=".">
     <description>Builds, tests, and runs the project Connect_Hub.</description>
+=======
+<project name="Connect_Hub_phase6" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Connect_Hub_phase6.</description>
+>>>>>>> Stashed changes
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -58,7 +63,11 @@
 
     An example of overriding the target for project execution could look like this:
 
+<<<<<<< Updated upstream
         <target name="run" depends="Connect_Hub-impl.jar">
+=======
+        <target name="run" depends="Connect_Hub_phase6-impl.jar">
+>>>>>>> Stashed changes
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>

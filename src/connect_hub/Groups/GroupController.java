@@ -1,6 +1,7 @@
 package connect_hub.Groups;
 
 public class GroupController {
+
     private final GroupService groupService;
 
     public GroupController() {
@@ -16,12 +17,25 @@ public class GroupController {
         }
     }
 
-    public void promoteToAdmin(String groupname, String username, String targetUsername) {
+    public void promoteToAdmin(String groupname, String targetUsername) {
         try {
-            groupService.promoteToAdmin(groupname, username, targetUsername);
+            groupService.promoteToAdmin(groupname, targetUsername);
             System.out.println("User promoted to admin successfully.");
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
     }
+
+    public String viewGroupDetails(String groupName) {
+        try {
+            Group group = groupService.getGroupByName(groupName);
+            return "Group Name: " + group.getName() + "\n"
+                    + "Description: " + group.getDescription() + "\n"
+                    + "Created By: " + group.getCreatedBy() + "\n"
+                    + "Members: " + group.getMembers().size();
+        } catch (Exception e) {
+            return "Error: " + e.getMessage();
+        }
+    }
 }
+

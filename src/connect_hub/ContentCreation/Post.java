@@ -28,6 +28,9 @@ public class Post implements Content {
         this.timestamp = LocalDateTime.now();
     }
 
+    public Post() {
+    }
+
     public Post(String caption, String photo, LocalDateTime timestamp) {
         this.caption = caption;
         this.photo = photo;
@@ -80,5 +83,26 @@ public class Post implements Content {
         }
         return authorName;
     }
+<<<<<<< Updated upstream
+=======
+
+    @Override
+    public String toString() {
+        return "Post{" + "id=" + id + ", authorId=" + authorId + ", caption=" + caption + ", photo=" + photo + ", timestamp=" + timestamp + '}';
+    }
+    @Override
+public boolean equals(Object obj) {
+    if (this == obj) return true;
+    if (obj == null || getClass() != obj.getClass()) return false;
+    Post post = (Post) obj;
+    return id.equals(post.id);  // Ensure to compare based on `id` or other unique fields
+}
+
+@Override
+public int hashCode() {
+    return id.hashCode();  // Use the unique `id` for hashCode
+}
+    
+>>>>>>> Stashed changes
 }
 

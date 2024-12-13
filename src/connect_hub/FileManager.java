@@ -1,9 +1,11 @@
 package connect_hub;
 
 import connect_hub.ContentCreation.*;
+import connect_hub.Groups.Group;
 import connect_hub.UserManagement.*;
 import java.io.*;
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.json.JSONArray;
@@ -125,6 +127,67 @@ public class FileManager<T> {
                     e.printStackTrace();
                 }
             }
+        } else if (object instanceof Group) {
+            Group group = (Group) object;
+
+            // Use reflection to get all fields and their values dynamically for Story
+           Field[] fields = Group.class.getDeclaredFields();
+for (Field field : fields) {
+    field.setAccessible(true);
+    try {
+        Object value = field.get(group);
+
+        if (field.getName().equals("id")) {
+            jsonObject.put(field.getName(), newId);
+        } else if (field.getName().equals("posts")) {
+          List<?> posts = (List<?>) value; // Cast to a generic list
+    JSONArray postsArray = new JSONArray();
+
+    for (Object post : posts) {
+        if (post instanceof Post) {
+            Post postObject = (Post) post;
+            JSONObject postJson = new JSONObject();
+            
+            // Add fields explicitly
+            postJson.put("caption", postObject.getCaption());
+            postJson.put("photo", postObject.getPhoto());
+            postJson.put("id", postObject.getid());
+            postJson.put("authorId", postObject.getAuthorId());
+            postJson.put("timestamp", postObject.getTimestamp().toString()); // Convert timestamp to String
+            
+            postsArray.put(postJson); // Add to posts array
+        }
+    }
+    jsonObject.put("posts", postsArray); // A
+        } else if (field.getName().equals("requestPosts")) {  // Check for requestedPosts field
+                List<?> requestedPosts = (List<?>) value; // Cast to a generic list
+                JSONArray requestedPostsArray = new JSONArray();
+
+                for (Object requestedPost : requestedPosts) {
+                    if (requestedPost instanceof Post) {
+                        Post postObject = (Post) requestedPost;
+                        JSONObject postJson = new JSONObject();
+
+                        // Add fields explicitly for Post
+                        postJson.put("caption", postObject.getCaption());
+                        postJson.put("photo", postObject.getPhoto());
+                        postJson.put("id", postObject.getid());
+                        postJson.put("authorId", postObject.getAuthorId());
+                        postJson.put("timestamp", postObject.getTimestamp().toString()); // Convert timestamp to String
+
+                        requestedPostsArray.put(postJson); // Add to requestedPosts array
+                    }
+                }
+                jsonObject.put("requestPosts", requestedPostsArray);}
+        
+        else {
+            jsonObject.put(field.getName(), value);
+        }
+    } catch (IllegalAccessException e) {
+        e.printStackTrace();
+    }
+}
+
         }
 
         // Add the new object to the JSON array
@@ -132,6 +195,7 @@ public class FileManager<T> {
 
         // Write the updated array back to the file
         try (FileWriter file = new FileWriter(filePath)) {
+              System.out.println("waitttt2");
             file.write(jsonArray.toString(4));  // Pretty print with indentation
         }
     }
